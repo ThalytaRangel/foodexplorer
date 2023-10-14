@@ -14,7 +14,7 @@ export default createGlobalStyle`
 
   body {
     height: 100vh;
-    background: ${({ theme }) => theme.GRADIENTS.BACKGROUND_200};
+    background: ${({ theme }) => theme.COLORS.DARK_400};
     
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     
