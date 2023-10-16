@@ -3,15 +3,19 @@ import styled from "styled-components";
 export const Container = styled.header`
   width: 100%;
   height: 104px;
-  padding: 2.4rem auto;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  justify-content:space-evenly;
-  gap: 3.2rem;
-
-  grid-area: "header";
+  padding: 2.4rem 12rem;
+    
+  
+  grid-area: header;
   background-color: ${({theme}) => theme.COLORS.DARK_600};
+
+  header {
+    width: 100%;
+    display: flex;
+
+    justify-content: space-between;
+    gap: 3.2rem;
+  }
 `;
 
 export const Input = styled.input`

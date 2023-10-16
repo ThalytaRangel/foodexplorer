@@ -16,6 +16,7 @@ export const Container = styled.div`
   }
 
   h1 {
+    width: 15rem;
     color: ${({theme}) => theme.COLORS.LIGHT_100};
     font-size: 2.4rem;
     font-family: ${({theme}) => theme.FONTS.Secondary};
