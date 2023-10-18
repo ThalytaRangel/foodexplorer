@@ -17,33 +17,49 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  grid-area: "content";
+  grid-area: content;
   padding-top: 2.4rem;  
 
   > main {
     display: flex;
+    width: 100% ;
     align-items: center;    
     justify-content: center;
     gap: 4.8rem;    
     margin-top: 4.2rem;
+    margin-bottom: 9rem;
+
+    img {
+      width: 33rem;
+      height: 33rem;      
+    }
 
     #info {
       display: flex;
       flex-direction: column;
       justify-content: start;
       gap: 2.4rem;
-      max-width: 68rem;
+      max-width: 55rem;
 
       h2 {
         font-size: 4rem;
         font-weight: 500;
         color: ${({theme}) => theme.COLORS.LIGHT_300};        
       }
+
+      #cartSelector {
+        display: flex;
+        flex-direction: row;
+        margin-top: 4.8rem;
+        gap: 3.3rem;
+        justify-content: flex-start;
+        align-items: center;
+      }
     }
   }
 `;
 
-export const Ingredients = styled.div`
+export const DishIngredients = styled.div`
   display: flex;
   gap: 2rem;
   margin-top: 2.4rem;

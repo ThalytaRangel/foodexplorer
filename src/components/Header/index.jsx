@@ -1,6 +1,6 @@
 import { Container, LogOutBtn } from "./styles";
 import { Logo } from "../Logo";
-import { Button } from "../Button";
+import { BtnHeader } from "../BtnHeader";
 import { Input } from "../Input";
 
 import { PiReceiptBold, PiSignOut } from "react-icons/pi";
@@ -15,7 +15,7 @@ export function Header() {
           placeholder="Busque por pratos ou ingredientes"
           icon={AiOutlineSearch}
         />
-        <Button title="Pedidos (0)" icon={PiReceiptBold} />
+        <BtnHeader title="Pedidos (0)" icon={PiReceiptBold} />
         <LogOutBtn>
           <PiSignOut />
         </LogOutBtn>
