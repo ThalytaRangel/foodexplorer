@@ -1,24 +1,25 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 3rem;
+  height: 4.8rem;
   
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
+  justify-content: center;
   justify-items: center;
 
   #logoIcon {
-    width: 3rem;
-    height: 3rem;
+    width: 5rem;
+    height: 5rem;
 
     fill: ${({theme}) => theme.COLORS.CAKE_100};    
   }
 
   h1 {
-    width: 15rem;
+    width: 30rem;
     color: ${({theme}) => theme.COLORS.LIGHT_100};
-    font-size: 2.4rem;
+    font-size: 4.2rem;
     font-family: ${({theme}) => theme.FONTS.Secondary};
     font-weight: 700;
   }

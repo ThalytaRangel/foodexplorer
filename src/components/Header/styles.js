@@ -9,12 +9,33 @@ export const Container = styled.header`
   grid-area: header;
   background-color: ${({theme}) => theme.COLORS.DARK_600};
 
-  header {
+  > header {
     width: 100%;
     display: flex;
-
+    align-items: center;
     justify-content: space-between;
     gap: 3.2rem;
+
+    div { 
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-items: center; 
+
+        #icon {
+         width: 3rem;
+         height: 3rem;
+
+         fill: ${({theme}) => theme.COLORS.CAKE_100};   
+        }
+
+        h1 {
+         color: ${({theme}) => theme.COLORS.LIGHT_100};
+         font-size: 2.4rem;
+         font-family: ${({theme}) => theme.FONTS.Secondary};
+         font-weight: 700;
+        }
+    }
   }
 `;
 
