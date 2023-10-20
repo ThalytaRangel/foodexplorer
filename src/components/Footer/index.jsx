@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <Container>
       <footer>
-        <div>
+        <div className="logo">
           <BsFillHexagonFill id="icon" />
           <h1>food explorer</h1>
         </div>

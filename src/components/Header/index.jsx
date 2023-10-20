@@ -10,7 +10,7 @@ export function Header() {
   return (
     <Container>
       <header>
-        <div>
+        <div className="logo">
           <BsFillHexagonFill id="icon" />
           <h1>food explorer</h1>
         </div>

@@ -1,13 +1,13 @@
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/theme/default";
-import { SignUp } from "./pages/SignUp";
+import { NewDish } from "./pages/NewDish";
 import GlobalStyle from "./styles/global";
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <SignUp />
+      <NewDish />
     </ThemeProvider>
   );
 }
