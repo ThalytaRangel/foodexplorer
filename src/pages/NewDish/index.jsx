@@ -15,10 +15,10 @@ export function NewDish() {
         <ButtonTxt icon={IoIosArrowBack} title="voltar" />
         <Form>
           <h2>Adicionar prato</h2>
-          <div id="infos">
+          <div className="infos">
             <div className="input-wrapper">
               <label htmlFor="image">Imagem do prato</label>
-              <Input type="file" placeholder="Selecione imagem" />
+              <Input id="image-input" type="file" />
             </div>
             <div className="input-wrapper">
               <label htmlFor="name">Nome do prato</label>
@@ -33,9 +33,19 @@ export function NewDish() {
               </select>
             </div>
           </div>
-          <Ingredients>
-            <NewTag />
-          </Ingredients>
+          <div className="infos">
+            <div id="label">
+              <h3>Ingredientes</h3>
+              <Ingredients>
+                <NewTag value="pão naan" />
+                <NewTag isNew placeholder="Nova Tag" />
+              </Ingredients>
+            </div>
+            <div className="input-wrapper">
+              <label htmlFor="price">Preço</label>
+              <Input id="price" type="text" placeholder="R$ 00,00" />
+            </div>
+          </div>
         </Form>
       </Content>
       <Footer />
