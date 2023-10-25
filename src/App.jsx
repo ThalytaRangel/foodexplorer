@@ -1,13 +1,13 @@
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/theme/default";
-import { NewDish } from "./pages/NewDish";
+import { EditDish } from "./pages/EditDish";
 import GlobalStyle from "./styles/global";
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <NewDish />
+      <EditDish />
     </ThemeProvider>
   );
 }

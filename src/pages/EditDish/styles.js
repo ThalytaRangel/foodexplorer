@@ -138,27 +138,46 @@ export const Form = styled.form`
     }
   }
 
-  .btn-save {
-    width: 17rem;
-    height: 4.8rem;
-    padding: 1.2rem 2rem;
-    margin-top: 3.2rem;
-
+  .btn-form {
+    width: 100%;
     display: flex;
-    align-self: flex-end;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    gap: 3.2rem;
+
+    .btn-delete {
+      width: 17rem;
+      height: 4.8rem;
+      padding: 1.2rem 2rem;
+      margin-top: 3.2rem;      
+  
+      border-radius: 0.5rem;
+      border: none;
+  
+      background-color: ${({theme}) => theme.COLORS.DARK_800};
+  
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: ${({theme}) => theme.COLORS.LIGHT_100};
+    }
     
-
-    border-radius: 0.5rem;
-    border: none;
-
-    background-color: ${({theme}) => theme.COLORS.TOMATO_400};
-
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: ${({theme}) => theme.COLORS.LIGHT_100};
+    .btn-save {
+      width: 17rem;
+      height: 4.8rem;
+      padding: 1.2rem 2rem;
+      margin-top: 3.2rem;
+    
+      border-radius: 0.5rem;
+      border: none;
+  
+      background-color: ${({theme}) => theme.COLORS.TOMATO_400};
+  
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: ${({theme}) => theme.COLORS.LIGHT_100};
+    }
+  
     
   }
 `

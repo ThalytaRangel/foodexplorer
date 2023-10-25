@@ -8,14 +8,14 @@ import { NewTag } from "../../components/NewTag";
 import { IoIosArrowBack } from "react-icons/io";
 import { FiUpload } from "react-icons/fi";
 
-export function NewDish() {
+export function EditDish() {
   return (
     <Container>
       <Header />
       <Content>
         <ButtonTxt className="back" icon={IoIosArrowBack} title="voltar" />
         <Form>
-          <h2>Adicionar prato</h2>
+          <h2>Editar prato</h2>
           <div className="infos">
             <InputFile>
               <label htmlFor="image">Imagem do prato</label>
@@ -56,11 +56,14 @@ export function NewDish() {
             <textarea
               id="description"
               rows="5"
-              placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+              placeholder="A Salada César é uma opção refrescante para o verão."
             ></textarea>
           </div>
 
-          <button className="btn-save">Salvar alterações</button>
+          <div className="btn-form">
+            <button className="btn-delete">Excluir prato</button>
+            <button className="btn-save">Salvar alterações</button>
+          </div>
         </Form>
       </Content>
       <Footer />
