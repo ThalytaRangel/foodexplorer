@@ -15,6 +15,12 @@ export const Container = styled.div`
   "footer";
 `
 
-export const Content = styled.div`
+export const Content = styled.div`  
   grid-area: content;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+
 `
