@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   max-width: 112rem;
   height: 26rem;
+  padding-right: 2rem;
   margin: 16rem auto 0;
   border-radius: 0.8rem;
   border: none;
@@ -43,6 +44,4 @@ export const Container = styled.div`
       color: ${({theme}) => theme.COLORS.LIGHT_300};
     }
   }
-
-
-`;
+`
