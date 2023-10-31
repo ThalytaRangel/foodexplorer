@@ -10,6 +10,11 @@ import salada from "../../assets/salada.png";
 import expresso from "../../assets/expresso.png";
 import macarrons from "../../assets/macarrons.png";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
 export function Home() {
   return (
     <Container>
@@ -17,74 +22,198 @@ export function Home() {
       <Content>
         <Banner />
         <Sections title="Refeições">
-          <Card
-            dishImg={spagietti}
-            title={"Spaguetti Gambe >"}
-            description={"Massa fresca com camarões e pesto."}
-            price={"R$ 79,97"}
-          />
-          <Card
-            dishImg={torradas}
-            title={"Torradas de Parma >"}
-            description={
-              "Presunto de parma e rúcula em um pão com fermentação natural."
-            }
-            price={"R$ 25,97"}
-          />
-          <Card
-            dishImg={salada}
-            title={"Salada Ravanello >"}
-            description={
-              "Rabanetes, folhas verdes e molho agridoce salpicados com gergelim."
-            }
-            price={"R$ 25,00"}
-          />
+          <Swiper
+            slidesPerView="3"
+            spaceBetween={27}
+            navigation={true}
+            modules={[Navigation]}
+            className="carrossel"
+          >
+            <SwiperSlide>
+              <Card
+                dishImg={spagietti}
+                title={"Spaguetti Gambe >"}
+                description={"Massa fresca com camarões e pesto."}
+                price={"R$ 79,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={torradas}
+                title={"Torradas de Parma >"}
+                description={
+                  "Presunto de parma e rúcula em um pão com fermentação natural."
+                }
+                price={"R$ 25,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={salada}
+                title={"Salada Ravanello >"}
+                description={
+                  "Rabanetes, folhas verdes e molho agridoce salpicados com gergelim."
+                }
+                price={"R$ 25,00"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={spagietti}
+                title={"Spaguetti Gambe >"}
+                description={"Massa fresca com camarões e pesto."}
+                price={"R$ 79,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={torradas}
+                title={"Torradas de Parma >"}
+                description={
+                  "Presunto de parma e rúcula em um pão com fermentação natural."
+                }
+                price={"R$ 25,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={salada}
+                title={"Salada Ravanello >"}
+                description={
+                  "Rabanetes, folhas verdes e molho agridoce salpicados com gergelim."
+                }
+                price={"R$ 25,00"}
+              />
+            </SwiperSlide>
+          </Swiper>
         </Sections>
         <Sections title="Sobremesas">
-          <Card
-            dishImg={macarrons}
-            title={"Macarons >"}
-            description={"Farinha de amêndoas, manteiga, claras e açúcar."}
-            price={"R$ 32,97"}
-          />
-          <Card
-            dishImg={macarrons}
-            title={"Macarons >"}
-            description={"Farinha de amêndoas, manteiga, claras e açúcar."}
-            price={"R$ 32,97"}
-          />
-          <Card
-            dishImg={macarrons}
-            title={"Macarons >"}
-            description={"Farinha de amêndoas, manteiga, claras e açúcar."}
-            price={"R$ 32,97"}
-          />
+          <Swiper
+            slidesPerView="3"
+            spaceBetween={27}
+            navigation={true}
+            modules={[Navigation]}
+            className="carrossel"
+          >
+            <SwiperSlide>
+              <Card
+                dishImg={macarrons}
+                title={"Macarons >"}
+                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
+                price={"R$ 32,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={macarrons}
+                title={"Macarons >"}
+                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
+                price={"R$ 32,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={macarrons}
+                title={"Macarons >"}
+                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
+                price={"R$ 32,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={macarrons}
+                title={"Macarons >"}
+                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
+                price={"R$ 32,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={macarrons}
+                title={"Macarons >"}
+                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
+                price={"R$ 32,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={macarrons}
+                title={"Macarons >"}
+                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
+                price={"R$ 32,97"}
+              />
+            </SwiperSlide>
+          </Swiper>
         </Sections>
         <Sections title="Bebidas">
-          <Card
-            dishImg={expresso}
-            title={"Expresso >"}
-            description={
-              "Café cremoso feito na temperatura e pressões perfeita"
-            }
-            price={"R$ 15,97"}
-          />
-          <Card
-            dishImg={expresso}
-            title={"Expresso >"}
-            description={
-              "Café cremoso feito na temperatura e pressões perfeita"
-            }
-            price={"R$ 15,97"}
-          />
-          <Card
-            dishImg={expresso}
-            title={"Expresso >"}
-            description={
-              "Café cremoso feito na temperatura e pressões perfeita"
-            }
-            price={"R$ 15,97"}
-          />
+          <Swiper
+            slidesPerView="3"
+            spaceBetween={27}
+            navigation={true}
+            modules={[Navigation]}
+            className="carrossel"
+          >
+            <SwiperSlide>
+              <Card
+                dishImg={expresso}
+                title={"Expresso >"}
+                description={
+                  "Café cremoso feito na temperatura e pressões perfeita"
+                }
+                price={"R$ 15,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={expresso}
+                title={"Expresso >"}
+                description={
+                  "Café cremoso feito na temperatura e pressões perfeita"
+                }
+                price={"R$ 15,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={expresso}
+                title={"Expresso >"}
+                description={
+                  "Café cremoso feito na temperatura e pressões perfeita"
+                }
+                price={"R$ 15,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={expresso}
+                title={"Expresso >"}
+                description={
+                  "Café cremoso feito na temperatura e pressões perfeita"
+                }
+                price={"R$ 15,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={expresso}
+                title={"Expresso >"}
+                description={
+                  "Café cremoso feito na temperatura e pressões perfeita"
+                }
+                price={"R$ 15,97"}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                dishImg={expresso}
+                title={"Expresso >"}
+                description={
+                  "Café cremoso feito na temperatura e pressões perfeita"
+                }
+                price={"R$ 15,97"}
+              />
+            </SwiperSlide>
+          </Swiper>
         </Sections>
       </Content>
       <Footer />

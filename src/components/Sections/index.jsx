@@ -4,7 +4,7 @@ export function Sections({ title, children }) {
   return (
     <Container>
       <h2>{title}</h2>
-      <div className="carrossel">{children}</div>
+      {children}
     </Container>
   );
 }

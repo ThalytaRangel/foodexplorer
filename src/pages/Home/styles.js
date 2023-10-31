@@ -8,7 +8,7 @@ export const Container = styled.div`
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-rows: 104px auto 77px;
+  grid-template-rows: 11.4rem auto 7.7rem;
   grid-template-areas: 
   "header"
   "content"

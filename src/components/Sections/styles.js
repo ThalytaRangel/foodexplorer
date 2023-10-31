@@ -20,13 +20,28 @@ export const Container = styled.div`
   
   > .carrossel {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 1rem;
+    display: flex;    
     gap: 2.7rem;
+
+  
+    .swiper-button-prev, .swiper-button-next {
+      color: ${({ theme }) => theme.COLORS.LIGHT_300};      
+    }
+
+    .swiper-button-prev {
+      display: flex;
+      position: absolute;        
+      left: 0;
+    }
+    .swiper-button-next {
+      display: flex;
+      position: absolute;       
+      right: 0;
+    }
   }
   .carrossel:last-child {
     margin-bottom: 4.6rem
-  }
+  } 
   
 `
