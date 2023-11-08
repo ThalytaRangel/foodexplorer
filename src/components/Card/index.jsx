@@ -1,6 +1,7 @@
 import { Container } from "./styles";
 import { AddToCart } from "../AddToCart";
 import { Button } from "../Button";
+import { Link } from "react-router-dom";
 
 import { AiOutlineHeart } from "react-icons/ai";
 
@@ -10,8 +11,10 @@ export function Card({ dishImg, title, description, price, ...rest }) {
       <button className="cardBtn">
         <AiOutlineHeart />
       </button>
-      <img className="dishImg" src={dishImg} alt="Imagem do prato" />
-      <h2 className="dishTitle">{title}</h2>
+      <Link to="/details/1">
+        <img className="dishImg" src={dishImg} alt="Imagem do prato" />
+        <h2 className="dishTitle">{title}</h2>
+      </Link>
       <p className="dishDescription">{description} </p>
       <strong className="price">{price}</strong>
 

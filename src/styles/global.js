@@ -21,7 +21,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body, button, textarea {
+  body, button, input, textarea {
     font-family: ${({ theme }) => theme.FONTS.Primary};
     font-size: 1.6rem;
     outline: none;
