@@ -9,7 +9,7 @@ export const Container = styled.div`
 
  border: 1px solid ${({theme}) => theme.COLORS.LIGHT_100};
  border-radius: 0.5rem;
-
+ 
  > input {
   background: none;
   border: none;
@@ -25,6 +25,8 @@ export const Container = styled.div`
     font-size: 1.6rem;
     font-weight: 400;
   }
+
+  
 
  }
 `;

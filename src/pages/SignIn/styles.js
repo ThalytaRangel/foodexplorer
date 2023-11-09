@@ -1,14 +1,23 @@
 import styled from "styled-components";
-
+import { DEVICE_BREAKPOINT } from "../../styles/devicesBreakpoints";
 export const Container = styled.div`
   height: 100vh;
   width: 100%;
   margin: auto;
+  padding: 2rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30rem;  
+  gap: 30rem;
+  
+
+  
+  @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
+    flex-direction: column;
+    gap: 7rem;       
+  }
+  
 `;
 
 export const Form = styled.form`
@@ -41,6 +50,12 @@ export const Form = styled.form`
       color: ${({theme}) => theme.COLORS.LIGHT_400 };
     }
   }
+  
+  .input-newStyle {
+    border: none;
+    border-radius: 0.8rem;
+    background-color: ${({theme}) => theme.COLORS.DARK_900 } ;
+  } 
 
   #btn-signIn {
     width: 100%;
@@ -51,5 +66,16 @@ export const Form = styled.form`
     text-align: center;
     font-weight: 500;
     font-size: 1.4rem;
+  }
+  @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
+    background-color: transparent;
+    padding: 0;
+    width: 31rem;
+
+    margin-bottom: 10rem;
+    
+    h2 {
+      display: none;
+    }
   }
 `;

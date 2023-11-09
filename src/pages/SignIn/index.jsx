@@ -11,11 +11,19 @@ export function SignIn() {
         <h2>Faça login</h2>
         <div className="input-wrapper">
           <label htmlFor="email">Email</label>
-          <Input type="email" placeholder="Exemplo: examplo@examplo.com" />
+          <Input
+            type="email"
+            placeholder="Exemplo: examplo@examplo.com"
+            className="input-newStyle"
+          />
         </div>
         <div className="input-wrapper">
           <label htmlFor="password">Senha</label>
-          <Input type="password" placeholder="No mínimo 6 caracteres" />
+          <Input
+            type="password"
+            placeholder="No mínimo 6 caracteres"
+            className="input-newStyle"
+          />
         </div>
         <Button id="btn-signIn" title="Entrar" />
         <a href="/register">Criar uma conta</a>
