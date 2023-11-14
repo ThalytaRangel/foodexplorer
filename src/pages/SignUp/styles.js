@@ -15,6 +15,11 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 7rem;       
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINT.LG}){
+    gap: 10rem;
+    padding: 5rem;
+  }  
 `;
 
 export const Form = styled.form`
@@ -76,4 +81,16 @@ export const Form = styled.form`
       display: none;
     }
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINT.LG}){
+    padding: 3rem;
+    gap: 2rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+    > label {
+      font-size: 1rem;
+    } 
+  }  
 `;

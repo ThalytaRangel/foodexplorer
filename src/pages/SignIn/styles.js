@@ -10,13 +10,17 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 30rem;
-  
-
-  
+    
   @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
     flex-direction: column;
+    justify-items: center;
     gap: 7rem;       
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINT.LG}){
+    gap: 10rem;
+    padding: 5rem;
+  }  
   
 `;
 
@@ -78,4 +82,15 @@ export const Form = styled.form`
       display: none;
     }
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINT.LG}){
+    padding: 3rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+    > label {
+      font-size: 1rem;
+    } 
+  }  
 `;

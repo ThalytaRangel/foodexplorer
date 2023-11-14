@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINT } from "../../styles/devicesBreakpoints";
 
 export const Container = styled.div`
  width: 100%;
@@ -26,7 +27,23 @@ export const Container = styled.div`
     font-weight: 400;
   }
 
-  
+  @media (max-width: ${DEVICE_BREAKPOINT.MD}) {    
+    &::placeholder {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: ${DEVICE_BREAKPOINT.LG}) {    
+    &::placeholder {
+      font-size: 1.3rem;
+    }
+  }   
+}
 
- }
+@media (max-width: ${DEVICE_BREAKPOINT.MD}) {    
+  padding: 1rem 1.2rem;
+}
+
+@media (max-width: ${DEVICE_BREAKPOINT.LG}) {    
+    padding: 1rem 1.2rem;
+  } 
 `;

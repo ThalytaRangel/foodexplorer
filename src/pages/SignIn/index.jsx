@@ -13,7 +13,7 @@ export function SignIn() {
           <label htmlFor="email">Email</label>
           <Input
             type="email"
-            placeholder="Exemplo: examplo@examplo.com"
+            placeholder="exemplo@examplo.com"
             className="input-newStyle"
           />
         </div>
