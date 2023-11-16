@@ -1,9 +1,9 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINT } from "../../styles/devicesBreakpoints";
 
 export const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100vh; 
- 
   
   display: grid;
   align-items: center;
@@ -12,7 +12,7 @@ export const Container = styled.div`
   grid-template-areas: 
   "header"
   "content"
-  "footer";
+  "footer";  
 `
 
 export const Content = styled.div`
@@ -25,10 +25,16 @@ export const Content = styled.div`
     margin-left: 19rem;
     margin-top: 4rem;
   }
+  @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
+    .back {
+      margin-left: 10rem;            
+    }
+  }
 `
 
 export const Form = styled.form`
-  width: 112rem;
+  max-width: 112rem;
+  width: 70%;
   margin: 0 auto 11rem;
   display: flex;
   flex-direction: column;
@@ -137,7 +143,6 @@ export const Form = styled.form`
 
     }
   }
-
   .btn-save {
     width: 17rem;
     height: 4.8rem;
@@ -161,14 +166,25 @@ export const Form = styled.form`
     color: ${({theme}) => theme.COLORS.LIGHT_100};
     
   }
+  @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
+    width: 100%;
+    margin: auto; 
+    align-items: center;
+
+    .infos {
+      flex-direction: column;
+      align-items: normal;
+    }
+    #categoria {
+        width: 100%;
+    }
+  }
 `
 
 export const InputFile = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-
-  
+  gap: 1.6rem;  
 
   :first-child {
     font-family: ${({theme}) => theme.FONTS.Secondary};
@@ -200,8 +216,14 @@ export const InputFile = styled.div`
     #image {
       display: none;
     }
-  }  
-` 
+  }
+@media (max-width: ${DEVICE_BREAKPOINT.MD}) {
+  
+  :nth-child(2) {
+    width: 100%;
+  }
+}    
+`
 
 export const Ingredients = styled.div`
   width: 85rem;
