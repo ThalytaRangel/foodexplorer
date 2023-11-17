@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINT} from "../../styles/devicesBreakpoints";
 
 export const Container = styled.header`
   width: 100%;
@@ -72,4 +73,20 @@ export const LogOutBtn = styled.button`
   font-size: 3.2rem;
   color: ${({theme}) => theme.COLORS.LIGHT_100};
   }
+`;
+
+export const Menu = styled.button`
+ background: none;
+ border: none;
+
+ display: none;
+
+ > svg {
+    font-size: 2.5rem;
+    color: ${({theme}) => theme.COLORS.LIGHT_100}; 
+   }
+
+   @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
+    display: block;
+   }
 `;

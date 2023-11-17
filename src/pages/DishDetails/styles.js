@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINT} from "../../styles/devicesBreakpoints"
 
 export const Container = styled.div`
   width: 100%;
