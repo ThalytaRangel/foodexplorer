@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINT} from "../../styles/devicesBreakpoints";
 
 export const Container = styled.button`
   width: 20rem;
@@ -22,5 +23,16 @@ export const Container = styled.button`
 
   cursor: pointer;
 
+  
+  @media (min-width: ${DEVICE_BREAKPOINT.MD}) {
+    background-color: transparent;
+    padding: 1rem 3rem;
+    width: fit-content;
+
+    > svg {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
   
 `;

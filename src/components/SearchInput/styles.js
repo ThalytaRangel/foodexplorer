@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINT} from "../../styles/devicesBreakpoints";
 
 export const Container = styled.div`
   width: 58rem;
@@ -32,4 +33,10 @@ export const Container = styled.div`
     color: ${({theme}) => theme.COLORS.LIGHT_400};
     margin-right: 1.4rem;
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
+    display: none !important;
+    
+
+   }
 `;

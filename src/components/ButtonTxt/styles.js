@@ -12,7 +12,7 @@ export const Container = styled.button`
   color: ${({theme}) => theme.COLORS.LIGHT_300};
 
   font-size: 2.4rem;
-  font-weight: 700;
+  font-weight: 500;
   font-family: ${({theme}) => theme.FONTS.Primary};
 
   > svg {
