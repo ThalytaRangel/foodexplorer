@@ -2,7 +2,7 @@ import { Container, Content, Form, InputFile, Ingredients } from "./styles";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { ButtonTxt } from "../../components/ButtonTxt";
-import { Input } from "../../components/Header/styles";
+import { Input } from "../../components/Input";
 import { NewTag } from "../../components/NewTag";
 
 import { IoIosArrowBack } from "react-icons/io";
@@ -26,7 +26,11 @@ export function EditDish() {
             </InputFile>
             <div className="input-wrapper">
               <label htmlFor="name">Nome</label>
-              <Input type="text" placeholder="Ex.: Salada Ceasar" />
+              <Input
+                className="edit"
+                type="text"
+                placeholder="Ex.: Salada Ceasar"
+              />
             </div>
             <div className="input-wrapper">
               <label htmlFor="categoria">Categoria</label>

@@ -10,6 +10,7 @@ export const Container = styled.div`
 
  border: 1px solid ${({theme}) => theme.COLORS.LIGHT_100};
  border-radius: 0.5rem;
+ background-color: ${({theme}) => theme.COLORS.DARK_800};
  
  > input {
   background: none;
@@ -25,7 +26,7 @@ export const Container = styled.div`
     font-family: ${({theme}) => theme.FONTS.Secondary};
     font-size: 1.6rem;
     font-weight: 400;
-  }
+  }  
 
   @media (max-width: ${DEVICE_BREAKPOINT.MD}) {    
     &::placeholder {

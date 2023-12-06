@@ -89,30 +89,6 @@ export const Container = styled.header`
   }
   }
 `
-export const Input = styled.input`
-  width: 58rem;
-  height: 4.8rem;
-  padding: 1.2rem 1.4rem;
-
-  border: none;
-  border-radius: 0.5rem;
-  background-color: ${({theme}) => theme.COLORS.DARK_900};
-
-  color: ${({theme}) => theme.COLORS.LIGHT_100};
-   
-  &::placeholder {    
-    color: ${({theme}) => theme.COLORS.LIGHT_500};
-  }
-
-  &:focus {
-    outline: solid 1px ${({theme}) => theme.COLORS.LIGHT_500};
-  }
-
-  @media (min-width: ${DEVICE_BREAKPOINT.MD}) {
-    display: none;
-   }
-
-`
 
 export const LogOutBtn = styled.button`
  border: none;
