@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINT} from "../../styles/devicesBreakpoints"; 
 
 export const Container = styled.div`
-  width: 108rem;
+  width: 55rem;
   margin-top: 4.8rem;
   display: flex;
   justify-content: start;
@@ -10,7 +11,7 @@ export const Container = styled.div`
 
   > h2 {
     width: 100%;    
-    font-size: 3.2rem;
+    font-size: 1.8rem;
     font-weight: 500;
     
 
@@ -42,6 +43,26 @@ export const Container = styled.div`
   }
   .carrossel:last-child {
     margin-bottom: 4.6rem
-  } 
+  }
+  
+  @media (min-width: ${DEVICE_BREAKPOINT.MD}) {
+    width: 70rem;
+
+    > h2 {
+    width: 100%;    
+    font-size: 2.4rem;
+    }
+   }
+  
+
+  @media (min-width: ${DEVICE_BREAKPOINT.LG}) {
+    width: 108rem;
+
+    > h2 {
+    width: 100%;    
+    font-size: 3.2rem;
+    }
+   }
+  
   
 `

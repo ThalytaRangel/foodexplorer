@@ -14,8 +14,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useMediaQuery } from "react-responsive";
 
 export function Home() {
+  const isDesktop = useMediaQuery({ minDeviceWidth: 1024 });
+
   return (
     <Container>
       <Header />
@@ -23,9 +26,11 @@ export function Home() {
         <Banner />
         <Sections title="Refeições">
           <Swiper
-            slidesPerView="3"
-            spaceBetween={27}
-            navigation={true}
+            slidesPerView={isDesktop ? 3 : 2}
+            spaceBetween={isDesktop ? 27 : 16}
+            autoplay={true}
+            loop={true}
+            navigation={isDesktop ? true : false}
             modules={[Navigation]}
             className="carrossel"
           >
@@ -89,9 +94,11 @@ export function Home() {
         </Sections>
         <Sections title="Sobremesas">
           <Swiper
-            slidesPerView="3"
-            spaceBetween={27}
-            navigation={true}
+            slidesPerView={isDesktop ? 3 : 2}
+            spaceBetween={isDesktop ? 27 : 16}
+            autoplay={true}
+            loop={true}
+            navigation={isDesktop ? true : false}
             modules={[Navigation]}
             className="carrossel"
           >
@@ -147,9 +154,11 @@ export function Home() {
         </Sections>
         <Sections title="Bebidas">
           <Swiper
-            slidesPerView="3"
-            spaceBetween={27}
-            navigation={true}
+            slidesPerView={isDesktop ? 3 : 2}
+            spaceBetween={isDesktop ? 27 : 16}
+            autoplay={true}
+            loop={true}
+            navigation={isDesktop ? true : false}
             modules={[Navigation]}
             className="carrossel"
           >

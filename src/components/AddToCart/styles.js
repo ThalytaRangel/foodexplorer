@@ -9,17 +9,22 @@ export const Container = styled.span`
   gap: 1.4rem;
 
   > button {
-    width: 2.7rem;
-    height: 2.7rem;
+    width: 2rem;
+    height: 2rem;
     background: none;
     border: none;
+    align-items: center;
     
     color: ${({theme}) => theme.COLORS.LIGHT_100};
-    font-size: 2.7rem;
+    
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
   > span {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     font-family: ${({theme}) => theme.FONTS.Secondary};
     font-weight: 700;
     color: ${({theme}) => theme.COLORS.LIGHT_300} ;
@@ -31,8 +36,6 @@ export const Container = styled.span`
     > button {
     width: 2.4rem;
     height: 2.4rem;
-
-    font-size: 2.4rem;
     }
 
     > span {
