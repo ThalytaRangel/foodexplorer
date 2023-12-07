@@ -7,7 +7,7 @@ export const Container = styled.span`
   gap: 0.8rem;
 
   height: 3.2rem;
-  padding: 1rem 1.6rem;
+  padding: 0.8rem 1.6rem;
   border-radius: 0.8rem;
   width: fit-content;
 
@@ -28,11 +28,18 @@ export const Container = styled.span`
       color: ${({theme}) => theme.COLORS.LIGHT_100};
       font-size: 0.8rem;
     }
-    
   } 
 
   > input {
-    width: 7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline;
+
+    width: fit-content;
+    max-width: 15rem;
+    min-width: 5rem;
+    
     background: none;
     border: none;
     outline: none;
