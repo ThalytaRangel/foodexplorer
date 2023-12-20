@@ -40,40 +40,6 @@ export const Container = styled.header`
          font-weight: 700;
         }
     }
-
-    .mobile-button {
-      background: none;
-      border: none;
-      width: fit-content;
-      height: 3.2rem;
-
-      > svg {
-      width: 3.2rem;
-      height: 3.2rem;
-
-      fill: white;
-      }
-
-      #quantity {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        width: 2rem;
-        height: 2rem;
-        padding: .8rem;
-        border-radius: 50%;
-        
-        background-color: ${({theme}) => theme.COLORS.TOMATO_100};
-        font-size: 1.4rem;
-        font-family: ${({ theme }) => theme.FONTS.Primary};
-        color: ${({theme}) => theme.COLORS.LIGHT_100};
-        
-
-        position: relative;
-        top: -4.3rem;
-        right: -1.8rem;
-    }
   }
 
   @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
@@ -86,7 +52,6 @@ export const Container = styled.header`
         font-size: 2.1rem;
       }
     }
-  }
   }
 `
 
@@ -106,19 +71,3 @@ export const LogOutBtn = styled.button`
    }
 `;
 
-export const Menu = styled.button`
- background: none;
- border: none;
-
- display: none;
-
- > svg {
-    width: 2.5rem;
-    height: 2.5rem;
-    color: ${({theme}) => theme.COLORS.LIGHT_100}; 
-   }
-
-   @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
-    display: block;
-   }
-`;
