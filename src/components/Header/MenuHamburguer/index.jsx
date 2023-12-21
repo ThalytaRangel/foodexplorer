@@ -3,6 +3,7 @@ import { BsList, BsX, BsFillHexagonFill } from "react-icons/bs";
 import { PiMagnifyingGlass, PiReceipt } from "react-icons/pi";
 import { SearchInput } from "../../SearchInput";
 import { ButtonTxt } from "../../ButtonTxt";
+import { Footer } from "../../Footer";
 
 export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
   return (
@@ -20,9 +21,9 @@ export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
           </button>
         </header>
       ) : (
-        <>
+        <div id="open-menu">
           <div className="header">
-            <BsX size={"1.8rem"} onClick={() => setIsMenuOpen(false)} />
+            <BsX onClick={() => setIsMenuOpen(false)} />
             <span>Menu</span>
           </div>
           <main>
@@ -38,7 +39,8 @@ export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
 
             <ButtonTxt title="Sair" />
           </main>
-        </>
+          <Footer />
+        </div>
       )}
     </Container>
   );

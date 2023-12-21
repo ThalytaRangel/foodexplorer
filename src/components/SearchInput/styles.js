@@ -34,7 +34,7 @@ export const Container = styled.div`
     margin-right: 1.4rem;
   }
 
-  /* @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
-    display: none !important;
-  } */
+   @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
+    width: 100%;
+  } 
 `;

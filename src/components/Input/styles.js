@@ -42,6 +42,7 @@ export const Container = styled.div`
 
 @media (max-width: ${DEVICE_BREAKPOINT.MD}) {    
   padding: 1rem 1.2rem;
+  width: fit-content;
 }
 
 @media (max-width: ${DEVICE_BREAKPOINT.LG}) {    

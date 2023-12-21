@@ -3,11 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
  width: 100%;
  height: 104px;  
- grid-area: header;
-    
-    /* visibility: ${({ isMenuOpen }) => (isMenuOpen ? "hidden" : "visible")};
-    opacity: ${({ isMenuOpen }) => (isMenuOpen ? "0" : "1")};
-    transition: opacity 0.7s ease-out, visibility 0.7s ease-out; */
+ grid-area: header; 
+
     
     > header {
       width: 100%;
@@ -88,27 +85,64 @@ export const Container = styled.div`
     }  
   }
 
-  > main {
-    grid-area: content;
-    justify-self: center;
+  #open-menu {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 10;  
+    
+    
 
-    width: calc(100% - 5.6rem);
-    margin: 3.6rem 2.8rem 1.4rem;
+    >.header {
+      height: 11.4rem;
+      width: 100%;
+      padding: 5.6rem 2.8rem 2.4rem ;
+      background: ${({theme}) => theme.COLORS.DARK_700};
 
-    > div {
-      margin-bottom: 3.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
 
-      input {
-        max-width: 100%;
+      svg {
+        width: 3rem;
+        height: 3rem;
+        justify-self: center;
+      }
+      
+      span {
+        font-size: 2.1rem;
+        margin-left: 1.6rem;
+        justify-self: center;
+      }
+    }
+    
+    > main {
+      grid-area: "content";
+      justify-self: center;
+      background: ${({theme}) => theme.COLORS.DARK_400};
+  
+      width: 100%;
+      height: 100%;
+      max-height: 60rem;
+      padding: 3.6rem 2.8rem 1.4rem;
+  
+      > div {
+        margin-bottom: 3.6rem;
+  
+        input {
+          max-width: 100%;
+        }
+      }
+  
+      button {
+        width: 100%;
+        padding: 1rem;
+        border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_400};
+        
+        font-weight: 300;
       }
     }
 
-    button {
-      width: 100%;
-      padding: 1rem;
-      border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_400};
-      
-      font-weight: 300;
-    }
   }
+
 `
