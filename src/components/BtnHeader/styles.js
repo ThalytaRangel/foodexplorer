@@ -23,9 +23,13 @@ export const Container = styled.button`
 
   cursor: pointer;
 
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
   
   @media (min-width: ${DEVICE_BREAKPOINT.MD}) {
-    background-color: transparent;
     padding: 1rem 3rem;
     width: fit-content;
 
