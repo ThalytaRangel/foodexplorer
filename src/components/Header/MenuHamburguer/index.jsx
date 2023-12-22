@@ -1,8 +1,9 @@
 import { Container } from "./styles";
-import { BsList, BsX, BsFillHexagonFill } from "react-icons/bs";
+import { BsList, BsX } from "react-icons/bs";
 import { PiMagnifyingGlass, PiReceipt } from "react-icons/pi";
 import { SearchInput } from "../../SearchInput";
 import { ButtonTxt } from "../../ButtonTxt";
+import { Logo } from "../../Logo";
 import { Footer } from "../../Footer";
 
 export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
@@ -11,14 +12,13 @@ export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
       {!isMenuOpen ? (
         <header>
           <BsList className="menu-icon" onClick={() => setIsMenuOpen(true)} />
-          <div className="logo">
-            <BsFillHexagonFill id="icon" />
-            <h1>food explorer</h1>
-          </div>
-          <button className="mobile-button">
-            <PiReceipt />
-            <div id="quantity">0</div>
-          </button>
+          <Logo type="header" /*isAdmin="isAdmin"*/ />
+          {isAdmin && ( //Adc negação quando conectar o backend
+            <button className="mobile-button">
+              <PiReceipt />
+              <div id="quantity">0</div>
+            </button>
+          )}
         </header>
       ) : (
         <div id="open-menu">
@@ -32,12 +32,15 @@ export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
               icon={PiMagnifyingGlass}
             />
             {isAdmin ? (
-              <ButtonTxt title="Novo prato" />
+              <>
+                <ButtonTxt className="btn-header" title="Novo prato" />
+                <ButtonTxt className="btn-header" title="Meus favoritos" />
+              </>
             ) : (
-              <ButtonTxt title="Meus favoritos" />
+              <ButtonTxt className="btn-header" title="Meus favoritos" />
             )}
 
-            <ButtonTxt title="Sair" />
+            <ButtonTxt className="btn-header" title="Sair" />
           </main>
           <Footer />
         </div>

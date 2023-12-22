@@ -2,30 +2,25 @@ import styled from "styled-components";
 
 export const Container = styled.div`
  width: 100%;
- height: 104px;  
- grid-area: header; 
-
-    
+ height: 104px; 
+     
     > header {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      grid-area: header; 
+      
             
       .menu-icon {      
-         width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
         font-size: 2rem;
         color: white; 
+        
+        cursor: pointer; 
       }
-    
-      svg {
-      width: 1.8rem;
-      height: 1.8rem ;
-      font-size: 2rem;
-      color: white;
-      }
-      
+                
       div {       
       display: flex;
       gap: 1rem;
@@ -88,8 +83,12 @@ export const Container = styled.div`
   #open-menu {
     height: 100%;
     width: 100%;
-    position: absolute;
-    z-index: 10;  
+    position: fixed;
+    top: 0;
+    left: 0;  
+    overflow: hidden;
+    display: block;
+    z-index: 2;  
     
     
 
@@ -134,10 +133,14 @@ export const Container = styled.div`
         }
       }
   
-      button {
+      .btn-header {
+        font-size: 2.4rem;
+        font-weight: 300;
+        color: ${({ theme }) => theme.COLORS.LIGTH_300};
+
         width: 100%;
         padding: 1rem;
-        border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_400};
+        border-bottom: 1px solid ${({ theme }) => theme.COLORS.DARK};
         
         font-weight: 300;
       }

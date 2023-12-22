@@ -16,43 +16,16 @@ export const Container = styled.header`
     align-items: center;
     justify-content: space-between;
     gap: 3.2rem;
-    
 
-    div { 
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      justify-items: center; 
-      
-
-        #icon {
-         width: 3rem;
-         height: 3rem;
-
-         fill: ${({theme}) => theme.COLORS.CAKE_100};   
-        }
-
-        h1 {
-         width: max-content ;
-         color: ${({theme}) => theme.COLORS.LIGHT_100};
-         font-size: 2.4rem;
-         font-family: ${({theme}) => theme.FONTS.Secondary};
-         font-weight: 700;
-        }
-    }
+    .favorites {
+      font-size: 1.8rem;
+      font-family: ${({theme}) => theme.FONTS.Secondary};
+    }    
   }
 
   @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
-    #logo {
-      #icon {
-        width: 2.4rem;
-        height: 2.4rem;
-      }
-      h1 {
-        font-size: 2.1rem;
-      }
-    }
-  }
+  padding: 3.4rem 3rem 2.4rem;;
+ }
 `
 
 export const LogOutBtn = styled.button`
