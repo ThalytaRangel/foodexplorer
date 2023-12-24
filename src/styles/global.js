@@ -35,5 +35,22 @@ export default createGlobalStyle`
   button:hover, a:hover {
     filter: brightness(0.9);
   }
+
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+  body::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.COLORS.DARK_600};    
+    }
+  body::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.COLORS.DARK_900};
+    border-radius: 10px;
+  }
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: ${({ theme }) => theme.COLORS.LIGHT_500};
+  }
+  body::-webkit-scrollbar-thumb:active {
+    background-color: ${({ theme }) => theme.COLORS.LIGHT_500};
+  }
 `
   
