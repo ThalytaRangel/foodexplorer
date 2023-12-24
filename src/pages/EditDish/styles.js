@@ -17,6 +17,13 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
+  @keyframes slideIn {
+    from {
+      transform: translateY(-10vh);
+      opacity: 0;
+    }
+  }
+  
   grid-area: content;
   width: 100%;
   max-width: 112rem;
@@ -24,7 +31,8 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-
+  animation: slideIn ease-in 1.8s;
+  
   .back {
     font-size: 1.6rem;
 

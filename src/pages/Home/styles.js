@@ -16,7 +16,13 @@ export const Container = styled.div`
   "footer";
 `
 
-export const Content = styled.div`  
+export const Content = styled.div`
+  @keyframes slideIn {
+    from {
+      transform: translateY(-10vh);
+      opacity: 0;
+    }
+  }    
   grid-area: content;
   height: 100%;
   width: 100%;
@@ -26,6 +32,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: slideIn ease-in 1.8s;
 
   @media (min-width: ${DEVICE_BREAKPOINT.LG}) {
     max-width: 112rem;

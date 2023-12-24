@@ -18,11 +18,17 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  @keyframes slideIn {
+    from {
+      transform: translateY(-10vh);
+      opacity: 0;
+    }
+  }  
   grid-area: content;
   padding: 1.6rem 5.6rem 3.3rem; 
   align-items: center;
   justify-content: center;
-
+  animation: slideIn ease-in 1.8s;
   > main {
     display: flex;
     flex-direction: column;
@@ -32,7 +38,8 @@ export const Content = styled.div`
     gap: 1.6rem;    
     margin-top: 1.6rem;
     margin-bottom: 1.6rem;
-
+    
+    
     img {
       width: 26rem;
       height: 26rem;      

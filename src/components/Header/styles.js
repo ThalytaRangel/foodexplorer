@@ -2,6 +2,11 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINT} from "../../styles/devicesBreakpoints";
 
 export const Container = styled.header`
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+  }
   width: 100%;
   height: 104px;
   padding: 3.4rem 8rem 2.4rem;   
@@ -9,7 +14,8 @@ export const Container = styled.header`
   
   grid-area: header;
   background-color: ${({theme}) => theme.COLORS.DARK_600};
-
+  
+  animation: appear ease-in 1.8s;
   > header {
     width: 100%;
     display: flex;

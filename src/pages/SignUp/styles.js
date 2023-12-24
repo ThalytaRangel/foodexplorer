@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINT } from "../../styles/devicesBreakpoints"; 
 
 export const Container = styled.div`
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+  }
+
   height: 100vh;
   width: 100%;
   margin: auto;
@@ -9,7 +15,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30rem;  
+  gap: 30rem;
+  
+  animation: appear ease-in 1.8s;
 
   @media (max-width: ${DEVICE_BREAKPOINT.MD}) {
     flex-direction: column;

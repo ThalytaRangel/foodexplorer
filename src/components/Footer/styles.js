@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINT} from "../../styles/devicesBreakpoints";
 
 export const Container = styled.footer`
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+  }
+  
   width: 100%;
   height: 7.7rem;
   padding: 2.4rem 4rem;
@@ -9,8 +15,9 @@ export const Container = styled.footer`
   justify-content: center;
   
   grid-area: footer;
-
+  
   background-color: ${({theme}) => theme.COLORS.DARK_600};
+  animation: appear ease-in 1.8s;
 
   > footer {
     display: flex;
