@@ -3,13 +3,14 @@ import { AddToCart } from "../AddToCart";
 import { Button } from "../Button";
 import { Link } from "react-router-dom";
 
+import { PiPencilSimple } from "react-icons/pi";
 import { AiOutlineHeart } from "react-icons/ai";
 
-export function Card({ dishImg, title, description, price, ...rest }) {
+export function Card({ dishImg, title, description, price, isAdmin, ...rest }) {
   return (
-    <Container {...rest}>
+    <Container isAdmin={isAdmin} {...rest}>
       <button className="cardBtn">
-        <AiOutlineHeart />
+        {isAdmin ? <PiPencilSimple /> : <AiOutlineHeart />}
       </button>
       <Link to="/details/1">
         <img className="dishImg" src={dishImg} alt="Imagem do prato" />

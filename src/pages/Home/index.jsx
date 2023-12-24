@@ -16,7 +16,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useMediaQuery } from "react-responsive";
 
-export function Home() {
+export function Home({ isAdmin = true }) {
   const isDesktop = useMediaQuery({ minDeviceWidth: 1024 });
 
   return (
@@ -32,10 +32,12 @@ export function Home() {
             loop={true}
             navigation={isDesktop ? true : false}
             modules={[Navigation]}
+            isAdmin={isAdmin}
             className="carrossel"
           >
             <SwiperSlide>
               <Card
+                isAdmin
                 dishImg={spagietti}
                 title={"Spaguetti Gambe >"}
                 description={"Massa fresca com camarões e pesto."}
@@ -44,6 +46,7 @@ export function Home() {
             </SwiperSlide>
             <SwiperSlide>
               <Card
+                isAdmin
                 dishImg={torradas}
                 title={"Torradas de Parma >"}
                 description={
