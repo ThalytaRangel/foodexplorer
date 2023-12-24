@@ -1,9 +1,22 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+ @keyframes appear {
+   from {
+     opacity: 0;
+    }
+  }
+  @keyframes slideIn {
+  from {
+    transform: translateX(-10vh);
+    opacity: 0;
+  }
+  }
+   
  width: 100%;
  height: 104px; 
-     
+ animation: appear ease-in 1.8s;
+
     > header {
       width: 100%;
       display: flex;
@@ -18,9 +31,9 @@ export const Container = styled.div`
         font-size: 2rem;
         color: white; 
         
-        cursor: pointer; 
+        cursor: pointer;         
       }
-                
+      
       div {       
       display: flex;
       gap: 1rem;
@@ -81,6 +94,7 @@ export const Container = styled.div`
   }
 
   #open-menu {
+
     height: 100%;
     width: 100%;
     position: fixed;
@@ -90,7 +104,7 @@ export const Container = styled.div`
     display: block;
     z-index: 2;  
     
-    
+    animation: slideIn ease-in 1.3s;
 
     >.header {
       height: 11.4rem;
@@ -106,6 +120,7 @@ export const Container = styled.div`
         width: 3rem;
         height: 3rem;
         justify-self: center;
+        cursor: pointer;
       }
       
       span {
