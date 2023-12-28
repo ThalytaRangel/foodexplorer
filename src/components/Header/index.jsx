@@ -1,3 +1,4 @@
+import { useAuth } from "../../hooks/auth";
 import { Container, LogOutBtn } from "./styles";
 import { BtnHeader } from "../BtnHeader";
 import { SearchInput } from "../SearchInput";
@@ -12,6 +13,8 @@ import { MenuHamburguer } from "./MenuHamburguer";
 export function Header({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { signOut } = useAuth();
 
   return (
     <Container>
@@ -43,7 +46,7 @@ export function Header({ isAdmin }) {
               <BtnHeader title="Meus pedidos" icon={PiReceipt} />
             )}
             {isDesktop && (
-              <LogOutBtn>
+              <LogOutBtn onClick={signOut}>
                 <PiSignOut />
               </LogOutBtn>
             )}

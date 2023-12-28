@@ -1,3 +1,4 @@
+import { useAuth } from "../../../hooks/auth";
 import { Container } from "./styles";
 import { BsList, BsX } from "react-icons/bs";
 import { PiMagnifyingGlass, PiReceipt } from "react-icons/pi";
@@ -7,6 +8,7 @@ import { Logo } from "../../Logo";
 import { Footer } from "../../Footer";
 
 export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
+  const { signOut } = useAuth();
   return (
     <Container>
       {!isMenuOpen ? (
@@ -40,7 +42,7 @@ export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
               <ButtonTxt className="btn-header" title="Meus favoritos" />
             )}
 
-            <ButtonTxt className="btn-header" title="Sair" />
+            <ButtonTxt className="btn-header" title="Sair" onClick={signOut} />
           </main>
           <Footer />
         </div>
