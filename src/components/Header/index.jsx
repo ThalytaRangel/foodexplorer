@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 import { Container, LogOutBtn } from "./styles";
 import { BtnHeader } from "../BtnHeader";
@@ -29,7 +30,9 @@ export function Header({ isAdmin }) {
       {isDesktop && (
         <>
           <header>
-            <Logo type="header" /*isAdmin="isAdmin"*/ />
+            <Link to="/">
+              <Logo type="header" /*isAdmin="isAdmin"*/ />
+            </Link>
             {isDesktop && (
               <SearchInput
                 placeholder="Busque por pratos ou ingredientes"
