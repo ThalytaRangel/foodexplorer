@@ -1,10 +1,20 @@
+import { useAuth } from "../../hooks/auth";
+import { useState } from "react";
 import { Container, Form } from "./styles";
 import { Logo } from "../../components/Logo";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
-import { useState } from "react";
 
 export function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { signIn } = useAuth();
+
+  function handleSignIn() {
+    signIn({ email, password });
+  }
+
   return (
     <Container>
       <Logo />
@@ -16,6 +26,7 @@ export function SignIn() {
             type="email"
             placeholder="exemplo@examplo.com"
             className="input-newStyle"
+            onChange={e => setEmail(e.target.value)}
           />
         </div>
         <div className="input-wrapper">
@@ -24,9 +35,10 @@ export function SignIn() {
             type="password"
             placeholder="No mínimo 6 caracteres"
             className="input-newStyle"
+            onChange={e => setPassword(e.target.value)}
           />
         </div>
-        <Button id="btn-signIn" title="Entrar" />
+        <Button id="btn-signIn" title="Entrar" onClick={handleSignIn} />
         <a href="/register">Criar uma conta</a>
       </Form>
     </Container>
