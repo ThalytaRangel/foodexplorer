@@ -8,9 +8,11 @@ import { ButtonTxt } from "../../ButtonTxt";
 import { Logo } from "../../Logo";
 import { Footer } from "../../Footer";
 
-export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
-  const { signOut } = useAuth();
+export function MenuHamburguer({ isMenuOpen, setIsMenuOpen }) {
+  const { signOut, user } = useAuth();
   const navigate = useNavigate();
+
+  const isAdmin = Boolean(user.admin);
 
   function handleSignOut() {
     signOut();
@@ -22,8 +24,8 @@ export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
       {!isMenuOpen ? (
         <header>
           <BsList className="menu-icon" onClick={() => setIsMenuOpen(true)} />
-          <Logo type="header" /*isAdmin="isAdmin"*/ />
-          {isAdmin && ( //Adc negação quando conectar o backend
+          <Logo type="header" isAdmin={isAdmin} />
+          {!isAdmin && (
             <button className="mobile-button">
               <PiReceipt />
               <div id="quantity">0</div>
@@ -43,11 +45,29 @@ export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
             />
             {isAdmin ? (
               <>
-                <ButtonTxt className="btn-header" title="Novo prato" />
-                <ButtonTxt className="btn-header" title="Meus favoritos" />
+                <ButtonTxt
+                  className="btn-header"
+                  title="Novo prato"
+                  onClick={() => {
+                    navigate("/new");
+                  }}
+                />
+                <ButtonTxt
+                  className="btn-header"
+                  title="Meus favoritos"
+                  onClick={() => {
+                    navigate("/favorites");
+                  }}
+                />
               </>
             ) : (
-              <ButtonTxt className="btn-header" title="Meus favoritos" />
+              <ButtonTxt
+                className="btn-header"
+                title="Meus favoritos"
+                onClick={() => {
+                  navigate("/favorites");
+                }}
+              />
             )}
 
             <ButtonTxt
