@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 import { Container, LogOutBtn } from "./styles";
 import { BtnHeader } from "../BtnHeader";
@@ -16,6 +16,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { signOut, user } = useAuth();
+  const navigate = useNavigate();
 
   const isAdmin = Boolean(user.admin);
 
@@ -38,11 +39,24 @@ export function Header() {
               />
             )}
             {isDesktop && (
-              <ButtonTxt className="favorites" title="Meus favoritos" />
+              <ButtonTxt
+                className="favorites"
+                title="Meus favoritos"
+                onClick={() => {
+                  navigate("/favorites");
+                }}
+              />
             )}
 
             {user?.admin ? (
-              isDesktop && <BtnHeader title="Novo Prato" />
+              isDesktop && (
+                <BtnHeader
+                  title="Novo Prato"
+                  onClick={() => {
+                    navigate("/new");
+                  }}
+                />
+              )
             ) : (
               <BtnHeader title="Meus pedidos" icon={PiReceipt} />
             )}
