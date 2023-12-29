@@ -21,7 +21,8 @@ export const Container = styled.div`
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-evenly;
+      gap: 1.6rem;
       grid-area: header; 
       
             
