@@ -52,6 +52,7 @@ export function MenuHamburguer({ isAdmin, isMenuOpen, setIsMenuOpen }) {
 
             <ButtonTxt
               className="btn-header"
+              id="logout"
               title="Sair"
               onClick={handleSignOut}
             />
