@@ -2,7 +2,7 @@ import { Container } from "./styles";
 import { AddToCart } from "../AddToCart";
 import { Button } from "../Button";
 import { PiPencilSimple } from "react-icons/pi";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiTwotoneHeart } from "react-icons/ai";
 
 import { Link } from "react-router-dom";
 
@@ -13,7 +13,7 @@ export function Card({ dishImg, title, description, price, ...rest }) {
 
   function addToFavorite() {
     const favorited = document.getElementById("btn-heart");
-    favorited.classList.add("active");
+    favorited.classList.toggle("active");
   }
   return (
     <Container {...rest}>
@@ -23,7 +23,7 @@ export function Card({ dishImg, title, description, price, ...rest }) {
             <PiPencilSimple id="btn-edit" />
           </Link>
         ) : (
-          <AiOutlineHeart id="btn-heart" onClick={addToFavorite} />
+          <AiTwotoneHeart id="btn-heart" onClick={addToFavorite} />
         )}
       </div>
       <Link to="/details/1">

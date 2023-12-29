@@ -18,7 +18,7 @@ export const Container = styled.div`
     border: none;
     position: relative ;
 
-    > svg {
+    #btn-edit {
       width: 2.4rem;
       height: 2.2rem;
 
@@ -27,9 +27,33 @@ export const Container = styled.div`
       top: -2.4rem;
       
       color: ${({theme}) => theme.COLORS.LIGHT_300};
-    }
-  }
 
+      cursor: pointer;
+    }
+
+    #btn-heart {
+      width: 2.4rem;
+      height: 2.2rem;
+
+      position: absolute;
+      left: 8.8rem;
+      top: -2.4rem;
+      
+      :first-child {
+        fill: ${({theme}) => theme.COLORS.LIGHT_300};
+      }
+
+      :nth-child(2) {
+        fill: none;
+      }
+
+      cursor: pointer;
+    }
+  
+  }
+  
+  
+  
   a {
     display: flex;
     flex-direction: column;
@@ -37,13 +61,13 @@ export const Container = styled.div`
     justify-content: center;
     gap: 2.4rem;
   }
-
-
+  
+  
   .dishImg {
     width: 8rem;
     height: 8rem;
   }
-
+  
   .dishTitle {
     font-size: 1.4rem;
     white-space: nowrap;
@@ -51,11 +75,11 @@ export const Container = styled.div`
     text-align: center;
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   }
-
+  
   .dishDescription {
     display: none;
   }
-
+  
   .price {
     font-size: 1.6rem;
     font-weight: 400;
@@ -63,7 +87,7 @@ export const Container = styled.div`
     color: ${({theme}) => theme.COLORS.CAKE_200};
     margin-bottom: 1.2rem;
   }
-
+  
   .quantityItems {
     display: flex;
     flex-direction: column;
@@ -71,26 +95,32 @@ export const Container = styled.div`
     justify-content: center;
     gap: 1.4rem;
     width: 100%;
-   
+    
     button {
       width: 100%;
     }
-   }
-
+  }
+  
+  #btn-heart.active {
+    :nth-child(2) {
+      fill: red;
+    } 
+       
+  }
   
   @media (min-width: ${DEVICE_BREAKPOINT.MD}) {
-   width: 30rem;
-
-   .dishImg {
-    width: 15rem;
-    height: 15rem;
-   }
-
-   .cardBtn{
-    > svg {
-      width: 2.8rem;
-      height: 2.6rem;
+    width: 30rem;
+    
+    .dishImg {
+      width: 15rem;
+      height: 15rem;
     }
+    
+    .cardBtn{
+      #btn-edit, #btn-heart {
+        width: 3rem;
+        height: 2.8rem;
+      }
    }
 
    .dishTitle {
