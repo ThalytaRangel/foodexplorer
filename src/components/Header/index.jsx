@@ -11,27 +11,25 @@ import { PiReceipt, PiSignOut, PiMagnifyingGlass } from "react-icons/pi";
 import { useState } from "react";
 import { MenuHamburguer } from "./MenuHamburguer";
 
-export function Header({ isAdmin }) {
+export function Header() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
+
+  const isAdmin = Boolean(user.admin);
 
   return (
     <Container>
       {!isDesktop && (
-        <MenuHamburguer
-          isAdmin="isAdmin"
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-        />
+        <MenuHamburguer isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       )}
 
       {isDesktop && (
         <>
           <header>
             <Link to="/">
-              <Logo type="header" /*isAdmin="isAdmin"*/ />
+              <Logo type="header" isAdmin={isAdmin} />
             </Link>
             {isDesktop && (
               <SearchInput
@@ -43,7 +41,7 @@ export function Header({ isAdmin }) {
               <ButtonTxt className="favorites" title="Meus favoritos" />
             )}
 
-            {isAdmin ? (
+            {user?.admin ? (
               isDesktop && <BtnHeader title="Novo Prato" />
             ) : (
               <BtnHeader title="Meus pedidos" icon={PiReceipt} />
