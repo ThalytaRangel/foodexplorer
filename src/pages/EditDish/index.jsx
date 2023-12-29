@@ -1,19 +1,32 @@
 import { Container, Content, Form, InputFile, Ingredients } from "./styles";
+
+import { useNavigate } from "react-router-dom";
+
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import { ButtonTxt } from "../../components/ButtonTxt";
 import { Input } from "../../components/Input";
 import { NewTag } from "../../components/NewTag";
+import { ButtonTxt } from "../../components/ButtonTxt";
 
 import { IoIosArrowBack } from "react-icons/io";
 import { FiUpload } from "react-icons/fi";
 
 export function EditDish() {
+  const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
   return (
     <Container>
       <Header />
       <Content>
-        <ButtonTxt className="back" icon={IoIosArrowBack} title="voltar" />
+        <ButtonTxt
+          className="back"
+          icon={IoIosArrowBack}
+          title="voltar"
+          onClick={handleBack}
+        />
         <Form>
           <h2>Editar prato</h2>
           <div className="infos">

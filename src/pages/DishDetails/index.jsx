@@ -1,24 +1,32 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
 import { Container, Content, DishIngredients } from "./styles";
+
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import dishPlaceholder from "../../assets/dishPlaceholder.png";
+import { Ingredient } from "../../components/Ingredient";
 import { ButtonTxt } from "../../components/ButtonTxt";
 import { AddToCart } from "../../components/AddToCart";
-import { Ingredient } from "../../components/Ingredient";
-import { IoIosArrowBack } from "react-icons/io";
 import { Button } from "../../components/Button";
+import dishPlaceholder from "../../assets/dishPlaceholder.png";
+
+import { IoIosArrowBack } from "react-icons/io";
 
 import { api } from "../../services/api";
 
 export function DishDetails() {
   const [dish, setDish] = useState(null);
   const params = useParams();
+  const navigate = useNavigate();
 
   const dishImgURL = dish?.image
     ? `${api.defaults.baseURL}/files/${dish.image}`
     : dishPlaceholder;
+
+  function handleBack() {
+    navigate(-1);
+  }
 
   useEffect(() => {
     async function fetchDishes() {
@@ -32,7 +40,7 @@ export function DishDetails() {
     <Container>
       <Header />
       <Content>
-        <ButtonTxt title="voltar" icon={IoIosArrowBack} />
+        <ButtonTxt title="voltar" icon={IoIosArrowBack} onClick={handleBack} />
         {dish && (
           <main>
             <img src={dishImgURL} alt="Foto da Salada Ravanello" />
