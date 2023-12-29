@@ -1,8 +1,8 @@
 import { Container } from "./styles";
 
-export function Sections({ title, children, isAdmin }) {
+export function Sections({ title, children }) {
   return (
-    <Container isAdmin={isAdmin}>
+    <Container>
       <h2>{title}</h2>
       {children}
     </Container>
