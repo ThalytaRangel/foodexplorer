@@ -4,11 +4,9 @@ import { Banner } from "../../components/Banner";
 import { Sections } from "../../components/Sections";
 import { Card } from "../../components/Card";
 import { Footer } from "../../components/Footer";
-import spagietti from "../../assets/spaguetti.png";
-import torradas from "../../assets/torradas.png";
-import salada from "../../assets/salada.png";
-import expresso from "../../assets/expresso.png";
-import macarrons from "../../assets/macarrons.png";
+
+import { useState, useEffect } from "react";
+import { api } from "../../services/api";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -18,6 +16,22 @@ import { useMediaQuery } from "react-responsive";
 
 export function Home() {
   const isDesktop = useMediaQuery({ minDeviceWidth: 1024 });
+
+  const [dishes, setDishes] = useState();
+  const [deserts, setDeserts] = useState();
+  const [drinks, setDrinks] = useState();
+
+  async function fetchDishes() {
+    const { data } = await api.get("/dishes");
+
+    setDishes(data.filter(dish => dish.category_id === 1));
+    setDeserts(data.filter(desert => desert.category_id === 2));
+    setDrinks(data.filter(drink => drink.category_id === 3));
+  }
+
+  useEffect(() => {
+    fetchDishes();
+  }, []);
 
   return (
     <Container>
@@ -34,62 +48,19 @@ export function Home() {
             modules={[Navigation]}
             className="carrossel"
           >
-            <SwiperSlide>
-              <Card
-                dishImg={spagietti}
-                title={"Spaguetti Gambe >"}
-                description={"Massa fresca com camarões e pesto."}
-                price={"R$ 79,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={torradas}
-                title={"Torradas de Parma >"}
-                description={
-                  "Presunto de parma e rúcula em um pão com fermentação natural."
-                }
-                price={"R$ 25,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={salada}
-                title={"Salada Ravanello >"}
-                description={
-                  "Rabanetes, folhas verdes e molho agridoce salpicados com gergelim."
-                }
-                price={"R$ 25,00"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={spagietti}
-                title={"Spaguetti Gambe >"}
-                description={"Massa fresca com camarões e pesto."}
-                price={"R$ 79,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={torradas}
-                title={"Torradas de Parma >"}
-                description={
-                  "Presunto de parma e rúcula em um pão com fermentação natural."
-                }
-                price={"R$ 25,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={salada}
-                title={"Salada Ravanello >"}
-                description={
-                  "Rabanetes, folhas verdes e molho agridoce salpicados com gergelim."
-                }
-                price={"R$ 25,00"}
-              />
-            </SwiperSlide>
+            {!dishes ? <p>Não há pratos cadastradas</p> : ""}
+            {dishes &&
+              dishes.map(dish => (
+                <SwiperSlide key={String(dish.id)}>
+                  <Card
+                    dishId={dish.id}
+                    dishImg={`${api.defaults.baseURL}/files/${dish.image}`}
+                    title={dish.name}
+                    description={dish.description}
+                    price={dish.price}
+                  />
+                </SwiperSlide>
+              ))}
           </Swiper>
         </Sections>
         <Sections title="Sobremesas">
@@ -102,54 +73,18 @@ export function Home() {
             modules={[Navigation]}
             className="carrossel"
           >
-            <SwiperSlide>
-              <Card
-                dishImg={macarrons}
-                title={"Macarons >"}
-                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
-                price={"R$ 32,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={macarrons}
-                title={"Macarons >"}
-                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
-                price={"R$ 32,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={macarrons}
-                title={"Macarons >"}
-                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
-                price={"R$ 32,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={macarrons}
-                title={"Macarons >"}
-                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
-                price={"R$ 32,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={macarrons}
-                title={"Macarons >"}
-                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
-                price={"R$ 32,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={macarrons}
-                title={"Macarons >"}
-                description={"Farinha de amêndoas, manteiga, claras e açúcar."}
-                price={"R$ 32,97"}
-              />
-            </SwiperSlide>
+            {!deserts ? <p>Não há sobremesas cadastradas</p> : ""}
+            {deserts &&
+              deserts.map(desert => (
+                <SwiperSlide key={String(desert.id)}>
+                  <Card
+                    dishImg={`${api.defaults.baseURL}/files/${desert.image}`}
+                    title={desert.name}
+                    description={desert.description}
+                    price={desert.price}
+                  />
+                </SwiperSlide>
+              ))}
           </Swiper>
         </Sections>
         <Sections title="Bebidas">
@@ -162,66 +97,18 @@ export function Home() {
             modules={[Navigation]}
             className="carrossel"
           >
-            <SwiperSlide>
-              <Card
-                dishImg={expresso}
-                title={"Expresso >"}
-                description={
-                  "Café cremoso feito na temperatura e pressões perfeita"
-                }
-                price={"R$ 15,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={expresso}
-                title={"Expresso >"}
-                description={
-                  "Café cremoso feito na temperatura e pressões perfeita"
-                }
-                price={"R$ 15,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={expresso}
-                title={"Expresso >"}
-                description={
-                  "Café cremoso feito na temperatura e pressões perfeita"
-                }
-                price={"R$ 15,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={expresso}
-                title={"Expresso >"}
-                description={
-                  "Café cremoso feito na temperatura e pressões perfeita"
-                }
-                price={"R$ 15,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={expresso}
-                title={"Expresso >"}
-                description={
-                  "Café cremoso feito na temperatura e pressões perfeita"
-                }
-                price={"R$ 15,97"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                dishImg={expresso}
-                title={"Expresso >"}
-                description={
-                  "Café cremoso feito na temperatura e pressões perfeita"
-                }
-                price={"R$ 15,97"}
-              />
-            </SwiperSlide>
+            {!drinks ? <p>Não há bebidas cadastradas</p> : ""}
+            {drinks &&
+              drinks.map(drink => (
+                <SwiperSlide key={String(drink.id)}>
+                  <Card
+                    dishImg={`${api.defaults.baseURL}/files/${drink.image}`}
+                    title={drink.name}
+                    description={drink.description}
+                    price={drink.price}
+                  />
+                </SwiperSlide>
+              ))}
           </Swiper>
         </Sections>
       </Content>
