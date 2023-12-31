@@ -20,6 +20,11 @@ export function Header() {
 
   const isAdmin = Boolean(user.admin);
 
+  function handleSignOut() {
+    signOut();
+    navigate("/");
+  }
+
   return (
     <Container>
       {!isDesktop && (
@@ -61,7 +66,7 @@ export function Header() {
               <BtnHeader title="Meus pedidos" icon={PiReceipt} />
             )}
             {isDesktop && (
-              <LogOutBtn onClick={signOut}>
+              <LogOutBtn onClick={handleSignOut}>
                 <PiSignOut />
               </LogOutBtn>
             )}
