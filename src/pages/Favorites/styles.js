@@ -44,6 +44,10 @@ export const Content = styled.div`
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
+
+      a {
+        color: ${({theme}) => theme.COLORS.LIGHT_300} ;
+      }
     }
   }
 
@@ -56,6 +60,9 @@ export const Content = styled.div`
     justify-content: center;
 
     > main {
+      display: flex;
+      flex-direction: column;
+      height: 70%;
       align-items: center;
       justify-content: center;
       
@@ -68,6 +75,7 @@ export const Content = styled.div`
       .favorites {
         flex-direction: row;
         max-width: 106rem;
+        height: 70%;
         gap: 4.8rem;
         
       }
