@@ -6,14 +6,16 @@ import { AdminRoutes } from "./admin.routes";
 
 export function Routes() {
   const { user } = useAuth();
-  const isAdmin = Boolean(user.admin);
 
   function AccessRoute() {
-    if (isAdmin) {
+    if (user.admin) {
       return <AdminRoutes />;
-    } else {
+    }
+    if (!user.admin) {
       return <AppRoutes />;
     }
+
+    return <AppRoutes />;
   }
 
   return (
