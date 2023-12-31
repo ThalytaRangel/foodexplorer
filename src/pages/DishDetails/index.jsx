@@ -59,7 +59,7 @@ export function DishDetails() {
               )}
               <div id="cartSelector">
                 <AddToCart />
-                <Button title={`incluir ∙ R$${dish.price}`} />
+                <Button title={`incluir ∙ R$ ${dish.price}`} />
               </div>
             </div>
           </main>
