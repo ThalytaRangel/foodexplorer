@@ -8,25 +8,25 @@ import { Link } from "react-router-dom";
 
 import { useAuth } from "../../hooks/auth";
 
-export function Card({ dishImg, title, description, price, ...rest }) {
+export function Card({ dishId, dishImg, title, description, price, ...rest }) {
   const { user } = useAuth();
 
   function addToFavorite() {
     const favorited = document.getElementById("btn-heart");
-    favorited.classList.toggle("active");
+    favorited.classList.add("active");
   }
   return (
     <Container {...rest}>
       <div className="cardBtn">
         {user?.admin ? (
-          <Link to="/edit/1">
+          <Link to={`/edit/${dishId}`}>
             <PiPencilSimple id="btn-edit" />
           </Link>
         ) : (
           <AiTwotoneHeart id="btn-heart" onClick={addToFavorite} />
         )}
       </div>
-      <Link to="/details/1">
+      <Link to={`/details/${dishId}`}>
         <img className="dishImg" src={dishImg} alt="Imagem do prato" />
         <h2 className="dishTitle">{title}</h2>
       </Link>
