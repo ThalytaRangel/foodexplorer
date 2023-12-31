@@ -57,7 +57,7 @@ export function Home() {
                     dishImg={`${api.defaults.baseURL}/files/${dish.image}`}
                     title={dish.name}
                     description={dish.description}
-                    price={dish.price}
+                    price={`R$ ${dish.price}`}
                   />
                 </SwiperSlide>
               ))}
@@ -78,10 +78,11 @@ export function Home() {
               deserts.map(desert => (
                 <SwiperSlide key={String(desert.id)}>
                   <Card
+                    dishId={desert.id}
                     dishImg={`${api.defaults.baseURL}/files/${desert.image}`}
                     title={desert.name}
                     description={desert.description}
-                    price={desert.price}
+                    price={`R$ ${desert.price}`}
                   />
                 </SwiperSlide>
               ))}
@@ -102,10 +103,11 @@ export function Home() {
               drinks.map(drink => (
                 <SwiperSlide key={String(drink.id)}>
                   <Card
+                    dishId={drink.id}
                     dishImg={`${api.defaults.baseURL}/files/${drink.image}`}
                     title={drink.name}
                     description={drink.description}
-                    price={drink.price}
+                    price={`R$ ${drink.price}`}
                   />
                 </SwiperSlide>
               ))}
