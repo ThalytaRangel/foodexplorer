@@ -16,7 +16,7 @@ function SearchProvider({ children }) {
   }
 
   return (
-    <SearchContext.Provider value={{ setSearch, search: data.seacher }}>
+    <SearchContext.Provider value={{ setSearch, search: data.search }}>
       {children}
     </SearchContext.Provider>
   );
