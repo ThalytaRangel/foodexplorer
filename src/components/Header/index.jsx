@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/auth";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { useAuth } from "../../hooks/auth";
 
 import { Container, LogOutBtn } from "./styles";
 import { BtnHeader } from "../BtnHeader";
@@ -17,6 +17,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { signOut, user } = useAuth();
+
   const navigate = useNavigate();
 
   const isAdmin = Boolean(user.admin);
