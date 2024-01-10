@@ -1,15 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
+import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
+
 import { Container, LogOutBtn } from "./styles";
 import { BtnHeader } from "../BtnHeader";
 import { SearchInput } from "../SearchInput";
 import { ButtonTxt } from "../ButtonTxt";
 import { Logo } from "../Logo";
-import { useMediaQuery } from "react-responsive";
+import { MenuHamburguer } from "./MenuHamburguer";
 
 import { PiReceipt, PiSignOut, PiMagnifyingGlass } from "react-icons/pi";
-import { useState } from "react";
-import { MenuHamburguer } from "./MenuHamburguer";
 
 export function Header() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
