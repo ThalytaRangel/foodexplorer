@@ -9,25 +9,24 @@ import { api } from "../../services/api";
 
 export function Favorites() {
   const [favorites, setFavorites] = useState();
-  const navigate = useNavigate();
 
-  async function handleRemoveFavorite(favorite) {
-    const id = Number(favorite.id);
+  async function handleRemoveFavorite(favoriteId) {
     const confirm = window.confirm(
       "Você tem certeza que deseja remover esse prato dos seus favoritos?",
     );
 
     if (confirm) {
-      await api.delete(`/favorites/${id}`);
-      navigate("/");
+      await api.delete(`/favorites/${favoriteId}`);
+      fetchFavorites();
     }
   }
 
+  async function fetchFavorites() {
+    const response = await api.get("/favorites");
+    setFavorites(response.data);
+  }
+
   useEffect(() => {
-    async function fetchFavorites() {
-      const response = await api.get("/favorites");
-      setFavorites(response.data);
-    }
     fetchFavorites();
   }, []);
 
@@ -40,7 +39,7 @@ export function Favorites() {
           <div className="favorites">
             {favorites &&
               favorites.map(favorite => (
-                <Card key={String(favorite.dish_id)}>
+                <Card key={String(favorite.id)}>
                   <Link to={`/details/${favorite.dish_id}`}>
                     <img
                       src={`${api.defaults.baseURL}/files/${favorite.image}`}
@@ -51,7 +50,9 @@ export function Favorites() {
                     <Link to={`/details/${favorite.dish_id}`}>
                       <h3>{favorite.name}</h3>
                     </Link>
-                    <button onClick={handleRemoveFavorite}>
+                    <button
+                      onClick={() => handleRemoveFavorite(favorite.dish_id)}
+                    >
                       Remover dos Favoritos
                     </button>
                   </div>
