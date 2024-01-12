@@ -46,9 +46,7 @@ export function NewDish() {
     const file = event.target.files[0];
     setDishImgFile(file);
 
-    const dishImg = URL.createObjectURL(file);
-
-    setDishImg(dishImg);
+    setDishImg(file.name);
   }
 
   async function handleNewDish(e) {
@@ -73,15 +71,15 @@ export function NewDish() {
     };
 
     try {
-      const { data: saveDish } = await api.post("/dishes", newDish);
+      const { data: dishSaved } = await api.post("/dishes", newDish);
 
-      const { id } = saveDish;
+      const { dish_id } = dishSaved;
 
-      if (dishImgFile && id) {
+      if (dishImgFile && dish_id) {
         const fileUploadForm = new FormData();
         fileUploadForm.append("image", dishImgFile);
 
-        await api.patch(`/dishes/${id}/image`, fileUploadForm);
+        await api.patch(`/dishes/${dish_id}/image`, fileUploadForm);
       }
 
       alert("Prato cadastrado com sucesso");
