@@ -16,7 +16,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { api } from "../../services/api";
 
 export function DishDetails() {
-  const [dish, setDish] = useState(null);
+  const [dish, setDish] = useState({});
   const params = useParams();
   const navigate = useNavigate();
 
