@@ -48,4 +48,14 @@ export const Container = styled.div`
 @media (max-width: ${DEVICE_BREAKPOINT.LG}) {    
     padding: 1rem 1.2rem;
   } 
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 `;
