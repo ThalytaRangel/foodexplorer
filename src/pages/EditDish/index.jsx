@@ -1,22 +1,96 @@
 import { Container, Content, Form, InputFile, Ingredients } from "./styles";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Input } from "../../components/Input";
 import { NewTag } from "../../components/NewTag";
 import { ButtonTxt } from "../../components/ButtonTxt";
-
 import { IoIosArrowBack } from "react-icons/io";
 import { FiUpload } from "react-icons/fi";
 
+import { api } from "../../services/api";
+
 export function EditDish() {
+  const params = useParams();
   const navigate = useNavigate();
+
+  const [data, setData] = useState({});
+
+  const [name, setName] = useState();
+  const [category, setCategory] = useState();
+  const [ingredients, setIngredients] = useState([]);
+  const [newIngredient, setNewIngredient] = useState([]);
+  const [price, setPrice] = useState();
+  const [description, setDescription] = useState();
+
+  const [dishImgFile, setDishImgFile] = useState(null);
+  const [dishImg, setDishImg] = useState("Selecione imagem");
 
   function handleBack() {
     navigate(-1);
   }
+
+  function handleAddIngredient() {
+    setIngredients(prevState => [...prevState, newIngredient]);
+    setNewIngredient("");
+  }
+
+  function handleRemoveIngredient(deleted) {
+    setIngredients(prevState =>
+      prevState.filter(ingredient => ingredient !== deleted),
+    );
+  }
+
+  function handleUploadImage(event) {
+    const file = event.target.files[0];
+    setDishImgFile(file);
+
+    setDishImg(file.name);
+  }
+
+  async function handleUpdate(e) {
+    e.preventDefault();
+
+    const updatedDish = {
+      name,
+      description,
+      price: Number(price.replace(",", ".")),
+      category_id: category,
+      ingredients,
+    };
+
+    try {
+      await api.put(`/dishes/${params.id}`, updatedDish);
+
+      if (dishImgFile) {
+        const fileUploadForm = new FormData();
+        fileUploadForm.append("image", dishImgFile);
+
+        await api.patch(`/dishes/${params.id}/image`, fileUploadForm);
+      }
+
+      alert("Prato cadastrado com sucesso");
+      navigate("/");
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert("Não foi possível realizar o cadastro do prato");
+      }
+    }
+  }
+
+  useEffect(() => {
+    async function fetchDish() {
+      const response = await api.get(`/dishes/${params.id}`);
+      setData(response.data);
+    }
+    fetchDish();
+  }, [params.id]);
+
   return (
     <Container>
       <Header />
@@ -33,8 +107,8 @@ export function EditDish() {
             <InputFile>
               <label htmlFor="image">Imagem do prato</label>
               <label className="input-image">
-                <FiUpload /> Selecione imagem
-                <input id="image" type="file" />
+                <FiUpload /> {dishImg}
+                <input id="image" type="file" onChange={handleUploadImage} />
               </label>
             </InputFile>
             <div className="input-wrapper">
@@ -42,15 +116,20 @@ export function EditDish() {
               <Input
                 className="edit"
                 type="text"
-                placeholder="Ex.: Salada Ceasar"
+                placeholder={data.name}
+                onChange={e => setName(e.target.value)}
               />
             </div>
             <div className="input-wrapper">
               <label htmlFor="categoria">Categoria</label>
-              <select id="categoria">
-                <option value="refeição">Refeição</option>
-                <option value="sobremesa">Sobremesa</option>
-                <option value="bebida">Bebida</option>
+              <select
+                id="categoria"
+                onChange={e => setCategory(e.target.value)}
+              >
+                <option value="0">Selecione</option>
+                <option value={1}>Refeição</option>
+                <option value={2}>Sobremesa</option>
+                <option value={3}>Bebida</option>
               </select>
             </div>
           </div>
@@ -58,13 +137,31 @@ export function EditDish() {
             <div id="label">
               <h3>Ingredientes</h3>
               <Ingredients>
-                <NewTag value="Pão Naan" />
-                <NewTag isNew placeholder="Adicionar" />
+                {data.ingredients?.map((ingredient, index) => (
+                  <NewTag
+                    key={index}
+                    value={ingredient?.name}
+                    onClick={() => handleRemoveIngredient(ingredient)}
+                  />
+                ))}
+                <NewTag
+                  isNew
+                  placeholder="Adicionar"
+                  value={newIngredient}
+                  onChange={e => setNewIngredient(e.target.value)}
+                  onClickHna={handleAddIngredient}
+                />
               </Ingredients>
             </div>
             <div className="input-wrapper">
-              <label htmlFor="price">Preço</label>
-              <Input id="price" type="text" placeholder="R$ 00,00" />
+              <label htmlFor="price">Preço (R$)</label>
+              <Input
+                id="price"
+                type="number"
+                placeholder={data.price}
+                value={data.price}
+                onChange={e => setPrice(e.target.value)}
+              />
             </div>
           </div>
 
@@ -73,13 +170,16 @@ export function EditDish() {
             <textarea
               id="description"
               rows="5"
-              placeholder="A Salada César é uma opção refrescante para o verão."
+              placeholder={data.description}
+              onChange={e => setDescription(e.target.value)}
             ></textarea>
           </div>
 
           <div className="btn-form">
             <button className="btn-delete">Excluir prato</button>
-            <button className="btn-save">Salvar alterações</button>
+            <button className="btn-save" onClick={handleUpdate}>
+              Salvar alterações
+            </button>
           </div>
         </Form>
       </Content>
