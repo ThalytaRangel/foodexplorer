@@ -2,19 +2,44 @@ import { Container } from "./styles";
 import { AddToCart } from "../AddToCart";
 import { Button } from "../Button";
 import { PiPencilSimple } from "react-icons/pi";
-import { AiTwotoneHeart } from "react-icons/ai";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
 import { useAuth } from "../../hooks/auth";
+import { api } from "../../services/api";
 
-export function Card({ dishId, dishImg, title, description, price, ...rest }) {
+export function Card({
+  dishId,
+  dishImg,
+  title,
+  description,
+  price,
+  isFavorite,
+  ...rest
+}) {
   const { user } = useAuth();
 
-  function addToFavorite() {
-    const favorited = document.getElementById("btn-heart");
-    favorited.classList.add("active");
+  const [isMarked, setMarked] = useState(isFavorite);
+
+  async function handleFavorites(dishId, isFavorite) {
+    if (isFavorite) {
+      const confirm = window.confirm(
+        "O prato já está nos seus favoritos, deseja remove-lo?",
+      );
+
+      if (confirm) {
+        await api.delete(`/favorites/${dishId}`);
+        setMarked(false);
+        return;
+      }
+    }
+
+    await api.post(`/favorites/${dishId}`);
+    setMarked(true);
   }
+
   return (
     <Container {...rest}>
       <div className="cardBtn">
@@ -22,13 +47,21 @@ export function Card({ dishId, dishImg, title, description, price, ...rest }) {
           <Link to={`/edit/${dishId}`}>
             <PiPencilSimple id="btn-edit" />
           </Link>
+        ) : isMarked ? (
+          <AiFillHeart
+            className="btn-heart "
+            onClick={() => handleFavorites(dishId, isFavorite)}
+          />
         ) : (
-          <AiTwotoneHeart id="btn-heart" onClick={addToFavorite} />
+          <AiOutlineHeart
+            className="btn-heart "
+            onClick={() => handleFavorites(dishId, isFavorite)}
+          />
         )}
       </div>
       <Link to={`/details/${dishId}`}>
         <img className="dishImg" src={dishImg} alt="Imagem do prato" />
-        <h2 className="dishTitle">{title}</h2>
+        <h2 className="dishTitle">{`${title} >`}</h2>
       </Link>
       <p className="dishDescription">{description} </p>
       <strong className="price">{price}</strong>

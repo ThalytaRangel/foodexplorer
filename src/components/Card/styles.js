@@ -31,25 +31,16 @@ export const Container = styled.div`
       cursor: pointer;
     }
 
-    #btn-heart {
+    .btn-heart {
       width: 2.4rem;
       height: 2.2rem;
 
       position: absolute;
       left: 8.8rem;
       top: -2.4rem;
-      
-      :first-child {
-        fill: ${({theme}) => theme.COLORS.LIGHT_300};
-      }
-
-      :nth-child(2) {
-        fill: none;
-      }
 
       cursor: pointer;
     }
-  
   }
   
   
@@ -101,13 +92,6 @@ export const Container = styled.div`
     }
   }
   
-  #btn-heart.active {
-    :nth-child(2) {
-      fill: red;
-    } 
-       
-  }
-  
   @media (min-width: ${DEVICE_BREAKPOINT.MD}) {
     width: 30rem;
     
@@ -117,7 +101,7 @@ export const Container = styled.div`
     }
     
     .cardBtn{
-      #btn-edit, #btn-heart {
+      #btn-edit, .btn-heart {
         width: 3rem;
         height: 2.8rem;
       }
