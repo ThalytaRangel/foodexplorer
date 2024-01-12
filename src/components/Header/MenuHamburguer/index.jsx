@@ -1,5 +1,6 @@
 import { useAuth } from "../../../hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useSearch } from "../../../hooks/search";
+import { useNavigate, Link } from "react-router-dom";
 import { Container } from "./styles";
 import { BsList, BsX } from "react-icons/bs";
 import { PiMagnifyingGlass, PiReceipt } from "react-icons/pi";
@@ -11,6 +12,7 @@ import { Footer } from "../../Footer";
 export function MenuHamburguer({ isMenuOpen, setIsMenuOpen }) {
   const { signOut, user } = useAuth();
   const navigate = useNavigate();
+  const { setSearch } = useSearch();
 
   const isAdmin = Boolean(user.admin);
 
@@ -19,12 +21,20 @@ export function MenuHamburguer({ isMenuOpen, setIsMenuOpen }) {
     navigate("/");
   }
 
+  function handleKeyPress(e) {
+    if (e.key === "Enter") {
+      setIsMenuOpen(false);
+    }
+  }
+
   return (
     <Container>
       {!isMenuOpen ? (
         <header>
           <BsList className="menu-icon" onClick={() => setIsMenuOpen(true)} />
-          <Logo type="header" isAdmin={isAdmin} />
+          <Link to="/">
+            <Logo type="header" isAdmin={isAdmin} />
+          </Link>
           {!isAdmin && (
             <button className="mobile-button">
               <PiReceipt />
@@ -42,6 +52,8 @@ export function MenuHamburguer({ isMenuOpen, setIsMenuOpen }) {
             <SearchInput
               placeholder="Busque por pratos ou ingredientes"
               icon={PiMagnifyingGlass}
+              onChange={e => setSearch(e.target.value)}
+              onKeyPress={e => handleKeyPress(e)}
             />
             {isAdmin ? (
               <>
