@@ -13,6 +13,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useMediaQuery } from "react-responsive";
+import { useSearch } from "../../hooks/search";
 
 export function Home() {
   const isDesktop = useMediaQuery({ minDeviceWidth: 1024 });
@@ -20,9 +21,24 @@ export function Home() {
   const [dishes, setDishes] = useState();
   const [deserts, setDeserts] = useState();
   const [drinks, setDrinks] = useState();
+  const { search } = useSearch();
+
+  async function markFavorites(dishes) {
+    const { data: favorites } = await api.get(`/favorites`);
+
+    const favoriteIds = favorites.map(dish => dish.dish_id); // 4 5 3 9 11 2
+
+    return dishes.map(dish => ({
+      ...dish,
+      is_favorite: favoriteIds.includes(dish.id),
+    }));
+  }
 
   async function fetchDishes() {
-    const { data } = await api.get("/dishes");
+    const searchQuery = search ? `?name=${search}` : "";
+    let { data } = await api.get(`/dishes${searchQuery}`);
+
+    data = await markFavorites(data);
 
     setDishes(data.filter(dish => dish.category_id === 1));
     setDeserts(data.filter(desert => desert.category_id === 2));
@@ -31,7 +47,7 @@ export function Home() {
 
   useEffect(() => {
     fetchDishes();
-  }, []);
+  }, [search]);
 
   return (
     <Container>
@@ -58,6 +74,7 @@ export function Home() {
                     title={dish.name}
                     description={dish.description}
                     price={`R$ ${dish.price}`}
+                    isFavorite={dish.is_favorite}
                   />
                 </SwiperSlide>
               ))}
@@ -83,6 +100,7 @@ export function Home() {
                     title={desert.name}
                     description={desert.description}
                     price={`R$ ${desert.price}`}
+                    isFavorite={desert.is_favorite}
                   />
                 </SwiperSlide>
               ))}
@@ -108,6 +126,7 @@ export function Home() {
                     title={drink.name}
                     description={drink.description}
                     price={`R$ ${drink.price}`}
+                    isFavorite={drink.is_favorite}
                   />
                 </SwiperSlide>
               ))}

@@ -9,7 +9,7 @@ function useSearch() {
 }
 
 function SearchProvider({ children }) {
-  const [data, setData] = useState({});
+  const [data, setData] = useState({ search: "" });
 
   function setSearch(query = "test") {
     setData({ search: query });

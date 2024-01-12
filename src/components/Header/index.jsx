@@ -11,10 +11,12 @@ import { Logo } from "../Logo";
 import { MenuHamburguer } from "./MenuHamburguer";
 
 import { PiReceipt, PiSignOut, PiMagnifyingGlass } from "react-icons/pi";
+import { useSearch } from "../../hooks/search";
 
 export function Header() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { setSearch } = useSearch();
 
   const { signOut, user } = useAuth();
 
@@ -43,6 +45,7 @@ export function Header() {
               <SearchInput
                 placeholder="Busque por pratos ou ingredientes"
                 icon={PiMagnifyingGlass}
+                onChange={e => setSearch(e.target.value)}
               />
             )}
             {isDesktop && (
