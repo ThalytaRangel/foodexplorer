@@ -171,7 +171,7 @@ export const Form = styled.form`
     justify-content: flex-end;
     gap: 3.2rem;
 
-    .btn-delete {
+    #btn-delete {
       width: 17rem;
       height: 4.8rem;
       padding: 1.2rem 2rem;

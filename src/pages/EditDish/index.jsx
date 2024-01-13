@@ -33,6 +33,18 @@ export function EditDish() {
     navigate(-1);
   }
 
+  async function handleRemoveDish() {
+    const confirm = window.confirm(
+      "Tem certeza que deseja deletar esse prato?",
+    );
+
+    if (confirm) {
+      await api.delete(`/dishes/${params.id}`);
+      alert("Prato deletado com sucesso");
+      navigate("/");
+    }
+  }
+
   function handleAddIngredient() {
     setIngredients(prevState => [...prevState, newIngredient]);
     setNewIngredient("");
@@ -72,13 +84,13 @@ export function EditDish() {
         await api.patch(`/dishes/${params.id}/image`, fileUploadForm);
       }
 
-      alert("Prato cadastrado com sucesso");
+      alert("Prato atualizado com sucesso");
       navigate("/");
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message);
       } else {
-        alert("Não foi possível realizar o cadastro do prato");
+        alert("Não foi possível atualizar o prato");
       }
     }
   }
@@ -140,7 +152,14 @@ export function EditDish() {
                 {data.ingredients?.map((ingredient, index) => (
                   <NewTag
                     key={index}
-                    value={ingredient?.name}
+                    value={ingredient.name}
+                    onClick={() => handleRemoveIngredient(ingredient.name)}
+                  />
+                ))}
+                {ingredients?.map((ingredient, index) => (
+                  <NewTag
+                    key={String(index)}
+                    value={ingredient}
                     onClick={() => handleRemoveIngredient(ingredient)}
                   />
                 ))}
@@ -149,7 +168,7 @@ export function EditDish() {
                   placeholder="Adicionar"
                   value={newIngredient}
                   onChange={e => setNewIngredient(e.target.value)}
-                  onClickHna={handleAddIngredient}
+                  onClick={handleAddIngredient}
                 />
               </Ingredients>
             </div>
@@ -176,7 +195,9 @@ export function EditDish() {
           </div>
 
           <div className="btn-form">
-            <button className="btn-delete">Excluir prato</button>
+            <button id="btn-delete" onClick={handleRemoveDish}>
+              Excluir prato
+            </button>
             <button className="btn-save" onClick={handleUpdate}>
               Salvar alterações
             </button>
