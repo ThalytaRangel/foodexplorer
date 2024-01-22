@@ -121,7 +121,7 @@ export const DishIngredients = styled.div`
   padding: 0 2rem;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   @media (min-width: ${DEVICE_BREAKPOINT.LG}) {
     align-items: start;
