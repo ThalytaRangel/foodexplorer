@@ -279,8 +279,31 @@ export const Ingredients = styled.div`
   align-items: center;
   justify-content: start;
   gap: 1.6rem;
+  overflow-y: hidden;
+  overflow-x: auto;
 
   background-color: ${({theme}) => theme.COLORS.DARK_800}; 
+
+  &::-webkit-scrollbar {
+        height: 0.3rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 1rem;
+        background: ${({theme}) => theme.COLORS.DARK_800};
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: ${({theme}) => theme.COLORS.DARK_800};
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: ${({theme}) => theme.COLORS.LIGHT_700};
+      }
+
+      &::-webkit-scrollbar-thumb:active {
+        background-color: ${({theme}) => theme.COLORS.LIGHT_700};
+      }
   
   @media (min-width: ${DEVICE_BREAKPOINT.LG}) {
     width: 85rem;
