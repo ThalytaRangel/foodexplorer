@@ -63,6 +63,7 @@ export const Form = styled.form`
 
   .input-newStyle {
     border: none;
+    width: 100%;
     border-radius: 0.8rem;
     background-color: ${({theme}) => theme.COLORS.DARK_900 } ;
   } 
