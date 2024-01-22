@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 import { Container, Content, DishIngredients } from "./styles";
 
@@ -10,6 +10,7 @@ import { ButtonTxt } from "../../components/ButtonTxt";
 import { AddToCart } from "../../components/AddToCart";
 import { Button } from "../../components/Button";
 import dishPlaceholder from "../../assets/dishPlaceholder.png";
+import { useAuth } from "../../hooks/auth";
 
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -19,6 +20,8 @@ export function DishDetails() {
   const [dish, setDish] = useState({});
   const params = useParams();
   const navigate = useNavigate();
+
+  const { user } = useAuth();
 
   const dishImgURL = dish?.image
     ? `${api.defaults.baseURL}/files/${dish.image}`
@@ -57,13 +60,20 @@ export function DishDetails() {
                   ))}
                 </DishIngredients>
               )}
-              <div id="cartSelector">
-                <AddToCart />
-                <Button
-                  onClick={handleBack}
-                  title={`incluir ∙ R$ ${dish.price}`}
-                />
-              </div>
+
+              {user?.admin ? (
+                <Link to={`/edit/${dish.id}`}>
+                  <Button title="Editar Prato" />
+                </Link>
+              ) : (
+                <div id="cartSelector">
+                  <AddToCart />
+                  <Button
+                    onClick={handleBack}
+                    title={`incluir ∙ R$ ${dish.price}`}
+                  />
+                </div>
+              )}
             </div>
           </main>
         )}
