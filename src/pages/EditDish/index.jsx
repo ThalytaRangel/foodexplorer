@@ -17,12 +17,10 @@ export function EditDish() {
   const params = useParams();
   const navigate = useNavigate();
 
-  const [data, setData] = useState({});
-
   const [name, setName] = useState();
   const [category, setCategory] = useState();
   const [ingredients, setIngredients] = useState([]);
-  const [newIngredient, setNewIngredient] = useState([]);
+  const [newIngredient, setNewIngredient] = useState("");
   const [price, setPrice] = useState();
   const [description, setDescription] = useState();
 
@@ -46,14 +44,17 @@ export function EditDish() {
   }
 
   function handleAddIngredient() {
-    setIngredients(prevState => [...prevState, newIngredient]);
+    if (!newIngredient) {
+      alert("Você não pode deixar o campo vazio");
+    } else {
+      setIngredients(prevState => [...prevState, newIngredient]);
+    }
     setNewIngredient("");
   }
 
   function handleRemoveIngredient(deleted) {
-    setIngredients(prevState =>
-      prevState.filter(ingredient => ingredient !== deleted),
-    );
+    const filteredIngredients = ingredients.filter(i => i !== deleted);
+    setIngredients(filteredIngredients);
   }
 
   function handleUploadImage(event) {
@@ -97,8 +98,12 @@ export function EditDish() {
 
   useEffect(() => {
     async function fetchDish() {
-      const response = await api.get(`/dishes/${params.id}`);
-      setData(response.data);
+      const { data: dishInfo } = await api.get(`/dishes/${params.id}`);
+      setName(dishInfo.name);
+      setDescription(dishInfo.description);
+      setCategory(dishInfo.category_id);
+      setIngredients(dishInfo.ingredients);
+      setPrice(dishInfo.price);
     }
     fetchDish();
   }, [params.id]);
@@ -128,7 +133,8 @@ export function EditDish() {
               <Input
                 className="edit"
                 type="text"
-                placeholder={data.name}
+                placeholder="Ex.: Salada Ceasar"
+                value={name}
                 onChange={e => setName(e.target.value)}
               />
             </div>
@@ -149,17 +155,10 @@ export function EditDish() {
             <div id="label">
               <h3>Ingredientes</h3>
               <Ingredients>
-                {data.ingredients?.map((ingredient, index) => (
-                  <NewTag
-                    key={index}
-                    value={ingredient.name}
-                    onClick={() => handleRemoveIngredient(ingredient.name)}
-                  />
-                ))}
                 {ingredients?.map((ingredient, index) => (
                   <NewTag
                     key={String(index)}
-                    value={ingredient}
+                    value={ingredient.name || ingredient}
                     onClick={() => handleRemoveIngredient(ingredient)}
                   />
                 ))}
@@ -177,8 +176,8 @@ export function EditDish() {
               <Input
                 id="price"
                 type="number"
-                placeholder={data.price}
-                value={data.price}
+                placeholder={`25,50`}
+                value={price}
                 onChange={e => setPrice(e.target.value)}
               />
             </div>
@@ -189,7 +188,8 @@ export function EditDish() {
             <textarea
               id="description"
               rows="5"
-              placeholder={data.description}
+              placeholder={`Descreva brevemente o prato`}
+              value={description}
               onChange={e => setDescription(e.target.value)}
             ></textarea>
           </div>
