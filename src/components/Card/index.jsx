@@ -66,10 +66,12 @@ export function Card({
       <p className="dishDescription">{description} </p>
       <strong className="price">{price}</strong>
 
-      <div className="quantityItems">
-        <AddToCart />
-        <Button title="incluir" />
-      </div>
+      {!user.admin && (
+        <div className="quantityItems">
+          <AddToCart />
+          <Button title="incluir" />
+        </div>
+      )}
     </Container>
   );
 }
