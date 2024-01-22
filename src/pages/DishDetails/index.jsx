@@ -59,7 +59,10 @@ export function DishDetails() {
               )}
               <div id="cartSelector">
                 <AddToCart />
-                <Button title={`incluir ∙ R$ ${dish.price}`} />
+                <Button
+                  onClick={handleBack}
+                  title={`incluir ∙ R$ ${dish.price}`}
+                />
               </div>
             </div>
           </main>
