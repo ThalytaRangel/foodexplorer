@@ -12,7 +12,7 @@ export const Container = styled.div`
     opacity: 0;
   }
   }
-   
+     
  width: 100%;
  height: 104px; 
  animation: appear ease-in 1.8s;
@@ -95,20 +95,24 @@ export const Container = styled.div`
   }
 
   #open-menu {
+    display: grid;
+    grid-template-areas: "header"
+    "content"
+    "footer";
+    grid-template-rows: 11.4rem auto 3rem;
 
     height: 100%;
     width: 100%;
     position: fixed;
     top: 0;
-    left: 0;  
-    overflow: hidden;
-    display: block;
-    z-index: 2;  
+    left: 0;    
+    overflow-x: hidden;
+    z-index: 5;  
     
     animation: slideIn ease-in 1.3s;
 
     >.header {
-      height: 11.4rem;
+      height: 100%;
       width: 100%;
       padding: 5.6rem 2.8rem 2.4rem ;
       background: ${({theme}) => theme.COLORS.DARK_700};
@@ -116,6 +120,7 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      grid-area: header;
 
       svg {
         width: 3rem;
@@ -123,7 +128,8 @@ export const Container = styled.div`
         justify-self: center;
         cursor: pointer;
       }
-      
+
+         
       span {
         font-size: 2.1rem;
         margin-left: 1.6rem;
@@ -138,7 +144,7 @@ export const Container = styled.div`
   
       width: 100%;
       height: 100%;
-      max-height: 60rem;
+      
       padding: 3.6rem 2.8rem 1.4rem;
   
       > div {
