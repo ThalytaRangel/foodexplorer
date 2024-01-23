@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { jwtDecode } from "jwt-decode";
 
 import { api } from "../services/api";
 
@@ -38,7 +39,13 @@ function AuthProvider({ children }) {
     const token = localStorage.getItem("@foodexplorer:token");
     const user = localStorage.getItem("@foodexplorer:user");
 
-    if (token && user) {
+    if (!token) return;
+
+    const decoded = jwtDecode(token);
+
+    const isExpired = Date.now() >= decoded.ext * 1000;
+
+    if (token && user && !isExpired) {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
       setData({
