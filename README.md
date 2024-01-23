@@ -1,66 +1,162 @@
-# Food Explorer
+<h1 align="center">
+    <img alt="icon" src="./public/icon-foodExplorer.svg"  style="vertical-align: middle; margin-right: 10px;">
+    Food Explorer
+</h1>
 
-Projeto realizado como parte do desafio final do curso explorer da Rocketseat. A ser avaliado pelos instrutores da instituição e servirá como um trabalho de conclusão necessário para a avaliação e certificação.
+<p align="center">
+Projeto realizado como trabalho de conclusão do curso de Desenvolvimento FullStack do programa Explorer da Rocketseat.
+</p>
 
-## Deploy
+<p align="center">
+  <a href="#memo-licença">
+    <img alt="License" src="https://img.shields.io/static/v1?style=flat&label=license&message=MIT&color=4AF2C3">
+  </a>
+  <a href="https://app.netlify.com/sites">
+    <img alt="netlify" src="https://api.netlify.com/api/v1/badges/c5365dc5-820c-429f-a26e-5b9f238cc0b9/deploy-status">
+  </a>
+  <a href="#-backend">
+    <img alt="render" src="https://img.shields.io/website?down_color=lightgrey&down_message=deploy&label=render&logo=render&logoColor=4AF2C3&style=flat&up_color=4AF2C3&up_message=online&url=https%3A%2F%2Ffoodexplorer-api-owmn.onrender.com%2F">
+  </a>
 
-- Veja o link do deploy [aqui](link-do-deploy).
+</p>
 
-## Stack utilizada
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Perfis">Perfis</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-backend">Backend</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>
+</p>
 
-**Front-end:**
+## 👩🏻‍🎨 Frontend
 
-- React Js
+<br>
+
+<p align="center">
+  <a href="https://ibb.co/ccwhQXy"><img src="https://i.ibb.co/C56KQsw/Home.png" alt="Home"  border="0"></a>
+</p>
+
+## 🛠️ Funcionalidades</h2>
+
+- Login
+- Cadastro de usuários
+- Mostrar cards com os pratos cadastrados
+- Pesquisa dos pratos por nome e ingredientes
+- Página com detalhes do prato
+- Adicionar pratos aos favoritos
+- Página com pratos favoritados pelo usuário
+- Página de cadastro de novos pratos para usuários administradores
+- Possibilidade de editar informações do prato pelo administrador
+- Excluir prato nas rotas de administrador
+- Logout
+
+## 🦾 Tecnologias
+
+- Axios
+- ReactJS
+- React Responsive
+- React Router Dom
+- React Icons
 - Styled Components
-- JavaScript
+- ViteJS
+- Swiper Element
 
-**Back-end:**
+## 🚀 Deploy
 
-- NodeJS
+O projeto está hospedado na **Netlify** e pode ser acessado em:
 
-## Cores
+- [FoodExplorer-netlify.app](https://)
 
-| Cor          | Hexadecimal                                                      |
-| ------------ | ---------------------------------------------------------------- |
-| Light-100    | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) #FFFFFF |
-| Light-200    | ![#FFFAF1](https://via.placeholder.com/10/FFFAF1?text=+) #FFFAF1 |
-| Light-300    | ![#E1E1E6](https://via.placeholder.com/10/E1E1E6?text=+) #E1E1E6 |
-| Light-400    | ![#C4C4CC](https://via.placeholder.com/10/C4C4CC?text=+) #C4C4CC |
-| Light-500    | ![#7C7C8A](https://via.placeholder.com/10/7C7C8A?text=+) #7C7C8A |
-| Light-600    | ![#76797B](https://via.placeholder.com/10/76797B?text=+) #76797B |
-| Light-700    | ![#4D585E](https://via.placeholder.com/10/4D585E?text=+) #4D585E |
-| Dark-100     | ![#000405](https://via.placeholder.com/10/000405?text=+) #000405 |
-| Dark-200     | ![#00070A](https://via.placeholder.com/10/00070A?text=+) #00070A |
-| Dark-300     | ![#000204](https://via.placeholder.com/10/000204?text=+) #000204 |
-| Dark-400     | ![#000A0F](https://via.placeholder.com/10/000A0F?text=+) #000A0F |
-| Dark-500     | ![#000C12](https://via.placeholder.com/10/000C12?text=+) #000C12 |
-| Dark-600     | ![#00111A](https://via.placeholder.com/10/00111A?text=+) #00111A |
-| Dark-700     | ![#001119](https://via.placeholder.com/10/001119?text=+) #001119 |
-| Dark-800     | ![#0D161B](https://via.placeholder.com/10/0D161B?text=+) #0D161B |
-| Dark-900     | ![#0D1D25](https://via.placeholder.com/10/0D1D25?text=+) #0D1D25 |
-| Dark         | ![#192227](https://via.placeholder.com/10/192227?text=+) #192227 |
-| Tomato-100   | ![#750310](https://via.placeholder.com/10/750310?text=+) #750310 |
-| Tomato-200   | ![#92000E](https://via.placeholder.com/10/92000E?text=+) #92000E |
-| Tomato-300   | ![#AB222E](https://via.placeholder.com/10/AB222E?text=+) #AB222E |
-| Tomato-400   | ![#AB4D55](https://via.placeholder.com/10/AB4D55?text=+) #AB4D55 |
-| Carrot-100   | ![#FBA94C](https://via.placeholder.com/10/FBA94C?text=+) #FBA94C |
-| Mint-100     | ![#04D361](https://via.placeholder.com/10/04D361?text=+) #04D361 |
-| Cake-100     | ![#065E7C](https://via.placeholder.com/10/065E7C?text=+) #065E7C |
-| Cake-200     | ![#82F3FF](https://via.placeholder.com/10/82F3FF?text=+) #82F3FF |
-| Gradient-100 | ! linear-gradient(90deg, rgba(0, 10, 15, 0.27) 0%, #000A0F 100%) |
-| Gradient-200 | ! linear-gradient(180deg, #091E26 0%, #00131C 100%)              |
+Para efetuar login na aplicação, utilize as credenciais da aba perfil logo abaixo.
 
-## Fontes
+## 👥 Perfis
 
-| Tipo    | Weight                    | Size          |
-| ------- | ------------------------- | ------------- |
-| Poppins | `Regular` `Medium` `Bold` | `12px - 40px` |
-| Roboto  | `Regular` `Medium` `Bold` | `12px - 42px` |
+**Administrador**:
 
-## Layout
+- login: `admin@email.com`
+- senha: `123456`
 
-- [Figma](<https://www.figma.com/file/9BuvN9zccvlJ3hLAYg8Olf/food-explorer-v2-(Community)?type=design&node-id=103%3A3203&mode=dev>)
+**Usuário**:
 
-## Autores
+- login: `user@email.com`
+- senha: `123456`
 
-- [Thalyta Rangel](https://github.com/ThalytaRangel)
+## 🛠️ Instalação
+
+<strong>🚧 Pré-requisitos </strong> <br>
+
+- `Node.js`
+- `npm`
+
+⚠️ É necessário realizar o deploy local do backend da aplicação, por isso acesse o repositório [ThalytaRangel/foodexplorer-api](https://github.com/ThalytaRangel/foodexplorer-api) e siga as instruções para a execução da aplicação localmente. Depois de feito você pode seguir com o passo a passo abaixo.
+
+Para executar a aplicação localmente basta seguir os seguintes passos:
+
+1. 📥 Clone o projeto:
+
+```bash
+git clone https://github.com/ThalytaRangel/foodexplorer.git
+```
+
+2. 📂 Acesse a pasta do projeto:
+
+```bash
+$ cd foodexplorer
+```
+
+3. 📦 Instale as dependências:
+
+```
+$ npm install
+```
+
+4. ▶️ Inicie o servidor:
+
+```
+$ npm run dev
+```
+
+5. 📡 Acesse o endereço de _localhost_, conforme o exemplo abaixo
+
+```
+ VITE v4.5.1  ready in 1093 ms
+
+  ➜  Local:   http://localhost:5173/
+```
+
+⚠️ **Atenção:** Essa aplicação utiliza uma api que encontra-se armazenada em um serviço de hospedagem de backend gratuita. Por esse motivo, pode haver atrasos na resposta do servidor sobretudo nas primeiras requisições quando ocorre o _cold start_.
+
+## 🔙 Backend
+
+O backend desta aplicação encontra-se no repositório:
+
+- [ThalytaRangel/foodexplorer-api](https://github.com/ThalytaRangel/foodexplorer-api)
+
+## 💻 Projeto
+
+Projeto realizado como parte do desafio final do curso Explorer da [@Rockeseat](https://www.rocketseat.com.br/). <br>
+Esse projeto será revisado pelos instrutores da instituição afim de avaliar os conhecimentos adquiridos bem como suas utilizações no desenvolvimento dessa aplicação. Servindo assim como um trabalho de conclusão necessário para a avaliação e certificação do curso de Desenvolvedor FullStack.
+
+## 🎨 Layout
+
+<a href="https://www.figma.com/file/9BuvN9zccvlJ3hLAYg8Olf/food-explorer-v2-(Community)?type=design&node-id=201%3A1532&mode=design&t=Qi1AH3yVIV83LKvg-1">
+<img alt="Figma" src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" height="50%"/> 
+</a>
+
+## 👩‍💻 Autora
+
+<a href="https://github.com/ThalytaRangel">
+    <img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+## Contatos
+
+<a href="https://www.linkedin.com/in/thalytarangel/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<br/><br/>
+<a href="mailto:thalyta_ornelas@hotmail.com">
+<img  alt="Outlook" src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" />
+</a>
+<br/><br/>
+<img alt="Discord" src="https://img.shields.io/badge/%3Cthalytarangel%3E-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white"/>
