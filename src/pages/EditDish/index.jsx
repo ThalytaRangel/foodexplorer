@@ -31,7 +31,9 @@ export function EditDish() {
     navigate(-1);
   }
 
-  async function handleRemoveDish() {
+  async function handleRemoveDish(e) {
+    e.preventDefault();
+
     const confirm = window.confirm(
       "Tem certeza que deseja deletar esse prato?",
     );
@@ -70,7 +72,7 @@ export function EditDish() {
     const updatedDish = {
       name,
       description,
-      price: Number(price.replace(",", ".")),
+      price,
       category_id: category,
       ingredients,
     };
@@ -102,11 +104,11 @@ export function EditDish() {
       setName(dishInfo.name);
       setDescription(dishInfo.description);
       setCategory(dishInfo.category_id);
-      setIngredients(dishInfo.ingredients);
+      setIngredients(dishInfo.ingredients.map(i => i.name));
       setPrice(dishInfo.price);
     }
     fetchDish();
-  }, [params.id]);
+  }, []);
 
   return (
     <Container>
@@ -158,7 +160,7 @@ export function EditDish() {
                 {ingredients?.map((ingredient, index) => (
                   <NewTag
                     key={String(index)}
-                    value={ingredient.name || ingredient}
+                    value={ingredient}
                     onClick={() => handleRemoveIngredient(ingredient)}
                   />
                 ))}
@@ -176,7 +178,7 @@ export function EditDish() {
               <Input
                 id="price"
                 type="number"
-                placeholder={`25,50`}
+                placeholder={25.5}
                 value={price}
                 onChange={e => setPrice(e.target.value)}
               />
