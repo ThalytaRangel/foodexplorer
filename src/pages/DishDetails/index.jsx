@@ -70,7 +70,7 @@ export function DishDetails() {
                   <AddToCart />
                   <Button
                     onClick={handleBack}
-                    title={`incluir ∙ R$ ${dish.price}`}
+                    title={`incluir ∙ R$ ${dish?.price?.toFixed(2)}`}
                   />
                 </div>
               )}

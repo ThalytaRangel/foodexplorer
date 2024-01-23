@@ -73,7 +73,7 @@ export function Home() {
                     dishImg={`${api.defaults.baseURL}/files/${dish.image}`}
                     title={dish.name}
                     description={dish.description}
-                    price={`R$ ${dish.price}`}
+                    price={`R$ ${dish.price.toFixed(2)}`}
                     isFavorite={dish.is_favorite}
                   />
                 </SwiperSlide>
@@ -99,7 +99,7 @@ export function Home() {
                     dishImg={`${api.defaults.baseURL}/files/${desert.image}`}
                     title={desert.name}
                     description={desert.description}
-                    price={`R$ ${desert.price}`}
+                    price={`R$ ${desert.price.toFixed(2)}`}
                     isFavorite={desert.is_favorite}
                   />
                 </SwiperSlide>
@@ -125,7 +125,7 @@ export function Home() {
                     dishImg={`${api.defaults.baseURL}/files/${drink.image}`}
                     title={drink.name}
                     description={drink.description}
-                    price={`R$ ${drink.price}`}
+                    price={`R$ ${drink.price.toFixed(2)}`}
                     isFavorite={drink.is_favorite}
                   />
                 </SwiperSlide>
