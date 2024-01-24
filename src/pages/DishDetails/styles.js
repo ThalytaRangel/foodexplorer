@@ -121,10 +121,11 @@ export const DishIngredients = styled.div`
   padding: 0 2rem;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 
   @media (min-width: ${DEVICE_BREAKPOINT.LG}) {
     align-items: start;
+    justify-content: flex-start;
     padding: 0;
   }
 `;
