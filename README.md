@@ -23,6 +23,7 @@ Projeto realizado como trabalho de conclusão do curso de Desenvolvimento FullSt
   <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-backend">Backend</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-licença">Licença</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-autora">Autora</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-contato">Contato</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
@@ -70,7 +71,7 @@ Esse projeto será revisado pelos instrutores da instituição afim de avaliar o
 
 O projeto está hospedado na **Netlify** e pode ser acessado em:
 
-- [FoodExplorer-netlify.app](https://)
+- [FoodExplorer](https://)
 
 Para efetuar login na aplicação, utilize as credenciais da aba perfil abaixo.
 
@@ -79,7 +80,7 @@ Para efetuar login na aplicação, utilize as credenciais da aba perfil abaixo.
 **Administrador**:
 
 - login: `admin@email.com`
-- senha: `123456`
+- senha: `654321`
 
 **Usuário**:
 
@@ -142,6 +143,12 @@ O backend desta aplicação encontra-se no repositório:
 <a href="https://www.figma.com/file/9BuvN9zccvlJ3hLAYg8Olf/food-explorer-v2-(Community)?type=design&node-id=201%3A1532&mode=design&t=Qi1AH3yVIV83LKvg-1">
 <img alt="Figma" src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" height="50%"/> 
 </a>
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.
+
+---
 
 ## 👩‍💻 Autora
 
