@@ -26,7 +26,7 @@ export const Content = styled.div`
   
   grid-area: content;
   width: 100%;
-  max-width: 112rem;
+  max-width: 64rem;
   padding: 1.6rem 5.6rem 3.3rem; 
   align-items: center;
   justify-content: center;
@@ -44,6 +44,7 @@ export const Content = styled.div`
   @media (min-width: ${DEVICE_BREAKPOINT.LG}) {
     width: 100%;
     height: 100%;
+    max-width: 112rem;
 
     .back {
     margin-top: 4rem;
