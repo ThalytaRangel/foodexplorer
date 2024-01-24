@@ -63,6 +63,7 @@ export const Content = styled.div`
         text-align: center;
       }
 
+      
       #cartSelector {
         width: 100%;
         display: flex;
@@ -74,6 +75,12 @@ export const Content = styled.div`
         align-items: center;
       }
     }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINT.LG}) {
+      #btn-edit {
+        width: 100%;
+      }
   }
 
   @media (min-width: ${DEVICE_BREAKPOINT.LG}) {

@@ -63,7 +63,7 @@ export function DishDetails() {
 
               {user?.admin ? (
                 <Link to={`/edit/${dish.id}`}>
-                  <Button title="Editar Prato" />
+                  <Button id="btn-edit" title="Editar Prato" />
                 </Link>
               ) : (
                 <div id="cartSelector">
