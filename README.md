@@ -71,7 +71,7 @@ Esse projeto será revisado pelos instrutores da instituição afim de avaliar o
 
 O projeto está hospedado na **Netlify** e pode ser acessado em:
 
-- [FoodExplorer](https://)
+- [FoodExplorer - Thalyta](https://thalytafoodexplorer.netlify.app/)
 
 Para efetuar login na aplicação, utilize as credenciais da aba perfil abaixo.
 
