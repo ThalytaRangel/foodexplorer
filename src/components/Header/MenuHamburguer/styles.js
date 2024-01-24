@@ -168,6 +168,28 @@ export const Container = styled.div`
       }
     }
 
+    &::-webkit-scrollbar {
+        width: 0.3rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 1rem;
+        background: ${({theme}) => theme.COLORS.DARK_800};
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: ${({theme}) => theme.COLORS.DARK_800};
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: ${({theme}) => theme.COLORS.DARK_600};
+      }
+
+      &::-webkit-scrollbar-thumb:active {
+        background-color: ${({theme}) => theme.COLORS.DARK_600};
+      }
+
+
   }
 
 `
