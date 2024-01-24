@@ -11,32 +11,35 @@ Projeto realizado como trabalho de conclusão do curso de Desenvolvimento FullSt
   <a href="#memo-licença">
     <img alt="License" src="https://img.shields.io/static/v1?style=flat&label=license&message=MIT&color=4AF2C3">
   </a>
-  <a href="https://app.netlify.com/sites">
-    <img alt="netlify" src="https://api.netlify.com/api/v1/badges/c5365dc5-820c-429f-a26e-5b9f238cc0b9/deploy-status">
-  </a>
-  <a href="#-backend">
-    <img alt="render" src="https://img.shields.io/website?down_color=lightgrey&down_message=deploy&label=render&logo=render&logoColor=4AF2C3&style=flat&up_color=4AF2C3&up_message=online&url=https%3A%2F%2Ffoodexplorer-api-owmn.onrender.com%2F">
-  </a>
-
 </p>
 
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-Perfis">Perfis</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-backend">Backend</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>
+  <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-perfis">Perfis</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-backend">Backend</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-autora">Autora</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-contato">Contato</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
-## 👩🏻‍🎨 Frontend
+## 💡 Preview
 
 <br>
 
 <p align="center">
   <a href="https://ibb.co/ccwhQXy"><img src="https://i.ibb.co/C56KQsw/Home.png" alt="Home"  border="0"></a>
 </p>
+
+## 💻 Projeto
+
+Projeto realizado como parte do desafio final do curso Explorer da [@Rockeseat](https://www.rocketseat.com.br/). <br>
+A proposta é o desenvolvimento de uma aplicação de ponta a ponta com front-end e back-end simulando um restaurante fictício e seu cardápio digital respeitando o layout disponibilizado no Figma. <br>
+Esse projeto será revisado pelos instrutores da instituição afim de avaliar os conhecimentos adquiridos bem como suas utilizações no desenvolvimento dessa aplicação. Servindo assim como um trabalho de conclusão necessário para a avaliação e certificação do curso de Desenvolvedor FullStack.
 
 ## 🛠️ Funcionalidades</h2>
 
@@ -69,7 +72,7 @@ O projeto está hospedado na **Netlify** e pode ser acessado em:
 
 - [FoodExplorer-netlify.app](https://)
 
-Para efetuar login na aplicação, utilize as credenciais da aba perfil logo abaixo.
+Para efetuar login na aplicação, utilize as credenciais da aba perfil abaixo.
 
 ## 👥 Perfis
 
@@ -134,11 +137,6 @@ O backend desta aplicação encontra-se no repositório:
 
 - [ThalytaRangel/foodexplorer-api](https://github.com/ThalytaRangel/foodexplorer-api)
 
-## 💻 Projeto
-
-Projeto realizado como parte do desafio final do curso Explorer da [@Rockeseat](https://www.rocketseat.com.br/). <br>
-Esse projeto será revisado pelos instrutores da instituição afim de avaliar os conhecimentos adquiridos bem como suas utilizações no desenvolvimento dessa aplicação. Servindo assim como um trabalho de conclusão necessário para a avaliação e certificação do curso de Desenvolvedor FullStack.
-
 ## 🎨 Layout
 
 <a href="https://www.figma.com/file/9BuvN9zccvlJ3hLAYg8Olf/food-explorer-v2-(Community)?type=design&node-id=201%3A1532&mode=design&t=Qi1AH3yVIV83LKvg-1">
@@ -147,16 +145,20 @@ Esse projeto será revisado pelos instrutores da instituição afim de avaliar o
 
 ## 👩‍💻 Autora
 
-<a href="https://github.com/ThalytaRangel">
-    <img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
-</a>
+  <a href="https://github.com/ThalytaRangel" >
+    <img alt="GitHub" src="https://img.shields.io/badge/Thalyta Rangel-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" style="vertical-align: text-top; margin-right: 10px;"/> 
+  </a>
 
-## Contatos
+## ☎️ Contato
 
-<a href="https://www.linkedin.com/in/thalytarangel/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<div style="display: flex;" >
+<a href="https://www.linkedin.com/in/thalytarangel/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" style="margin-right: 2vw" target="_blank"></a>
 <br/><br/>
 <a href="mailto:thalyta_ornelas@hotmail.com">
-<img  alt="Outlook" src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" />
+<img  alt="Outlook" src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" style="margin-right: 2vw" target="_blank"/>
 </a>
 <br/><br/>
-<img alt="Discord" src="https://img.shields.io/badge/%3Cthalytarangel%3E-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white"/>
+<a href="https://discord.com/users/thalytarangel" target="_blank">
+<img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" style="margin-right: 2vw" target="_blank">
+</a>
+</div>
